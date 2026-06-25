@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Johnny Farr — Experience Design Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBFAF6;
+    --ink:#15181E;
+    --ink-soft:#565B65;
+    --accent:#1A3A6B;
+    --accent-deep:#12294D;
+    --accent-soft:#DCE6F4;
+    --line:#E7E5DD;
+    --rule:#DAD8CE;
+    --card-border:rgba(26,58,107,.22);
+    --group-line:rgba(21,24,30,.16);
+    --card:#FFFFFF;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  .rule{height:1px;background:repeating-linear-gradient(90deg,var(--rule) 0 1px,transparent 1px 9px)}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1.45fr .9fr;gap:48px;align-items:center;padding:58px 0 50px}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
+  h1{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(46px,6.6vw,74px);line-height:1.04;letter-spacing:-.01em;margin-bottom:22px}
+  .thesis{font-size:clamp(20px,2.3vw,24px);line-height:1.42;color:var(--ink);max-width:32ch;font-weight:400}
+  .thesis .hl{background:linear-gradient(transparent 60%,var(--accent-soft) 60%);padding:0 3px;font-weight:600;white-space:nowrap}
+  .anchor{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);margin-top:20px;letter-spacing:.01em}
+  .cta-row{margin-top:26px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-family:"IBM Plex Mono",monospace;font-size:13.5px;font-weight:500;letter-spacing:.01em;padding:14px 26px;border-radius:3px;transition:background .15s}
+  .btn:hover{background:var(--accent-deep)}
+  .hero-li{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--accent);padding-bottom:3px}
+  .hero-li:hover{color:var(--accent)}
+  .jumps{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px;padding-top:22px;border-top:1px solid var(--line)}
+  .jump{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:5px;cursor:pointer}
+  .jump:hover{color:var(--accent)}
+  .jump .ar{color:var(--accent);font-size:13px}
+
+  /* photo */
+  .portrait{aspect-ratio:4/5;width:100%;border-radius:4px;overflow:hidden;background:var(--card);position:relative}
+  .portrait img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* top strip — 4 consequences */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr)}
+  .stat{padding:30px 22px 32px;border-left:1px solid var(--line)}
+  .stat:first-child{border-left:none;padding-left:4px}
+  .stat .top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .trend{width:20px;height:20px;color:var(--accent);flex-shrink:0}
+  .stat .num{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:clamp(28px,3.4vw,40px);line-height:1;letter-spacing:-.02em;color:var(--accent);font-feature-settings:"tnum" 1}
+  .stat .lab{font-size:14px;line-height:1.45;color:var(--ink-soft)}
+
+  /* bands */
+  .band{padding-top:46px}
+  .band h2{font-family:"Playfair Display",serif;font-size:clamp(25px,3vw,32px);font-weight:700;letter-spacing:-.005em;margin-bottom:15px}
+  .band-rule{height:1px;background:var(--group-line);margin-bottom:17px}
+  .band-desc{font-size:15px;color:var(--ink-soft);line-height:1.5;max-width:none;margin-bottom:28px}
+  .band-sep{height:1px;background:repeating-linear-gradient(90deg,var(--rule) 0 1px,transparent 1px 9px);margin-top:46px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .card{background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:20px 20px 22px;position:relative;text-align:left;cursor:pointer;font-family:inherit;transition:border-color .15s;display:flex;flex-direction:column}
+  .card:hover{border-color:var(--accent)}
+  .card .lk{width:13px;height:13px;position:absolute;top:18px;right:18px;color:var(--ink-soft);transition:color .15s}
+  .card:hover .lk{color:var(--accent)}
+  .card .eyb{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;letter-spacing:.01em;color:var(--accent);margin-bottom:16px;display:inline-flex;align-items:center;gap:6px;padding-right:18px}
+  .card .eyb .te{width:14px;height:14px;flex-shrink:0}
+  .card .ct{font-family:"Hanken Grotesk",sans-serif;font-size:16.5px;font-weight:600;letter-spacing:-.005em;line-height:1.25;margin-bottom:9px;padding-right:14px}
+  .card .cs{font-size:14px;color:var(--ink-soft);line-height:1.48}
+
+  /* footer */
+  footer{padding:46px 0 64px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .foot-links{display:flex;gap:24px}
+  .foot-links a{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink);text-decoration:none}
+  .foot-links a:hover{color:var(--accent)}
+  .foot-note{font-size:13px;color:var(--ink-soft)}
+
+  /* modal */
+  .modal-bg{position:fixed;inset:0;background:rgba(15,18,20,.5);display:none;align-items:center;justify-content:center;padding:24px;z-index:50}
+  .modal-bg.on{display:flex}
+  .modal{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:34px 32px;max-width:380px;width:100%}
+  .modal h3{font-family:"Playfair Display",serif;font-weight:700;font-size:22px;letter-spacing:-.005em;margin-bottom:8px}
+  .modal p{font-size:14.5px;color:var(--ink-soft);margin-bottom:20px}
+  .modal input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:3px;font-size:15px;font-family:"IBM Plex Mono",monospace;margin-bottom:14px;background:var(--paper)}
+  .modal input:focus{outline:none;border-color:var(--accent)}
+  .modal .m-actions{display:flex;gap:10px}
+  .modal .btn{flex:1;text-align:center;cursor:pointer;border:none}
+  .modal .btn-cancel{background:none;color:var(--ink-soft);border:1px solid var(--line)}
+  .modal .btn-cancel:hover{background:none;color:var(--ink)}
+  .err{color:#B0341F;font-size:13px;margin-bottom:12px;display:none}
+  .err.on{display:block}
+
+  @media(max-width:780px){
+    .hero{grid-template-columns:1fr;gap:32px;padding:40px 0}
+    .portrait{max-width:280px}
+    .stats{grid-template-columns:1fr 1fr}
+    .stat{padding:22px 16px}
+    .stat:nth-child(odd){border-left:none;padding-left:4px}
+    .stat:nth-child(n+3){border-top:1px solid var(--line)}
+    .cards{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div>
+      <div class="eyebrow">Experience Design Leader · Payments, Fintech &amp; AI</div>
+      <h1>Johnny Farr</h1>
+      <p class="thesis">I lead Experience Design where a design decision is also a <span class="hl">financial one</span>. I get the strategy and team right, so the business outcomes follow.</p>
+      <div class="cta-row">
+        <a class="btn" href="mailto:hello@johnnyfarr.com">Get in touch →</a>
+        <a class="hero-li" href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="portrait">
+      <img src="johnny.png" alt="Johnny Farr">
+    </div>
+  </header>
+
+  <!-- ── TOP STRIP: four consequences ─────────────────── -->
+  <div class="rule"></div>
+  <section class="stats" aria-label="Selected outcomes">
+    <div class="stat">
+      <div class="top">
+        <svg class="trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 L9.5 10.5 L13.5 13.5 L21 5.5"/><path d="M15.5 5.5 H21 V11"/></svg>
+        <div class="num">83%</div>
+      </div>
+      <div class="lab">turned a research insight into repeat revenue</div>
+    </div>
+    <div class="stat">
+      <div class="top">
+        <svg class="trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 L9.5 10.5 L13.5 13.5 L21 5.5"/><path d="M15.5 5.5 H21 V11"/></svg>
+        <div class="num">2.5&times;</div>
+      </div>
+      <div class="lab">more customers cleared onboarding, fewer support calls</div>
+    </div>
+    <div class="stat">
+      <div class="top">
+        <svg class="trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 L9.5 10.5 L13.5 13.5 L21 5.5"/><path d="M15.5 5.5 H21 V11"/></svg>
+        <div class="num">130K</div>
+      </div>
+      <div class="lab">moved the business onto its own payment rails</div>
+    </div>
+    <div class="stat">
+      <div class="top">
+        <svg class="trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 L9.5 10.5 L13.5 13.5 L21 5.5"/><path d="M15.5 5.5 H21 V11"/></svg>
+        <div class="num">2&times;</div>
+      </div>
+      <div class="lab">turned a new option into real checkout adoption</div>
+    </div>
+  </section>
+  <div class="rule"></div>
+
+  <!-- ── BAND 1 ───────────────────────────────────────── -->
+  <section class="band" id="design-leadership">
+    <h2>Design Leadership</h2>
+    <div class="band-rule"></div>
+    <p class="band-desc">I own craft and team health to a standard most product leaders are never held to — and ship work that moves the number.</p>
+    <div class="cards">
+      <button class="card" data-case="payouts">
+        <svg class="lk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        <span class="eyb"><svg class="te" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 L9.5 10.5 L13.5 13.5 L21 5.5"/><path d="M15.5 5.5 H21 V11"/></svg>83% return</span>
+        <span class="ct">Instant payouts, found in research</span>
+        <span class="cs">A customer need we discovered through research; launched it and 83% came back, 40% of payments users tried it.</span>
+      </button>
+      <button class="card" data-case="aibeta">
+        <svg class="lk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        <span class="eyb">0→1 · in beta</span>
+        <span class="ct">AI product, blank page to beta</span>
+        <span class="cs">Set the strategy and vision, then did the IC design end to end — reframing the way in as an onboarding problem.</span>
+      </button>
+      <button class="card" data-case="research">
+        <svg class="lk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        <span class="eyb">Embedded, org-wide</span>
+        <span class="ct">Research, ad hoc to continuous</span>
+        <span class="cs">Stood up the continuous research practice the whole org now runs on.</span>
+      </button>
+    </div>
+  </section>
+
+  <div class="band-sep"></div>
+
+  <!-- ── BAND 2 ───────────────────────────────────────── -->
+  <section class="band" id="strategy">
+    <h2>Strategy &amp; Insight</h2>
+    <div class="band-rule"></div>
+    <p class="band-desc">I turn ambiguous signals into the insight and narrative that shape executive direction — upstream of any roadmap.</p>
+    <div class="cards">
+      <button class="card" data-case="payfac">
+        <svg class="lk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        <span class="eyb"><svg class="te" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 L9.5 10.5 L13.5 13.5 L21 5.5"/><path d="M15.5 5.5 H21 V11"/></svg>130K migrated</span>
+        <span class="ct">PayFac migration at scale</span>
+        <span class="cs">Moved 130K users and billions in volume in under 60 days while becoming a payment facilitator.</span>
+      </button>
+      <button class="card" data-case="kyc">
+        <svg class="lk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        <span class="eyb"><svg class="te" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 L9.5 10.5 L13.5 13.5 L21 5.5"/><path d="M15.5 5.5 H21 V11"/></svg>2.5× onboarding</span>
+        <span class="ct">Rebuilt KYC onboarding</span>
+        <span class="cs">Deliberately added friction in the right places — support calls dropped and 2.5× more users completed payments onboarding.</span>
+      </button>
+      <button class="card" data-case="finserv">
+        <svg class="lk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        <span class="eyb">Strategy + vendors</span>
+        <span class="ct">New finserv stream, end to end</span>
+        <span class="cs">Built a new finserv line — lending and bill pay — and aligned external vendors to our roadmap.</span>
+      </button>
+    </div>
+  </section>
+
+  <div class="band-sep"></div>
+
+  <!-- ── BAND 3 ───────────────────────────────────────── -->
+  <section class="band" id="cross-functional">
+    <h2>Cross-functional Influence</h2>
+    <div class="band-rule"></div>
+    <p class="band-desc">Fluent in OKRs, product, and engineering — so decisions get shaped before they ever hit the backlog.</p>
+    <div class="cards">
+      <button class="card" data-case="bnpl">
+        <svg class="lk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        <span class="eyb"><svg class="te" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 L9.5 10.5 L13.5 13.5 L21 5.5"/><path d="M15.5 5.5 H21 V11"/></svg>2× usage</span>
+        <span class="ct">BNPL across 2 providers</span>
+        <span class="cs">Introduced BNPL, then doubled usage over three phases of experiments across two providers.</span>
+      </button>
+      <button class="card" data-case="surcharging">
+        <svg class="lk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        <span class="eyb">70%+ demand</span>
+        <span class="ct">Shipped surcharging, net-new</span>
+        <span class="cs">70%+ of customers wanted it; coordinated across engineering to ship.</span>
+      </button>
+      <button class="card" data-case="checkout">
+        <svg class="lk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        <span class="eyb">In flight</span>
+        <span class="ct">Redefining checkout</span>
+        <span class="cs">Live experiments running now, early results already promising.</span>
+      </button>
+    </div>
+  </section>
+
+  <div class="rule" style="margin-top:46px"></div>
+  <footer>
+    <div class="foot-links">
+      <a href="mailto:hello@johnnyfarr.com">Get in touch</a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="foot-note">Case studies are private — ask me for the password.</div>
+  </footer>
+
+</div>
+
+<!-- password modal -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <h3>Private case study</h3>
+    <p>These are client-confidential. Drop the password in and you're in — or just ask me when we talk.</p>
+    <div class="err" id="errMsg">That's not it — try again, or ask me directly.</div>
+    <input type="password" id="pwInput" placeholder="Password" autocomplete="off">
+    <div class="m-actions">
+      <button class="btn btn-cancel" id="cancelBtn">Cancel</button>
+      <button class="btn" id="unlockBtn">Unlock</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const PASSWORD = "letmein";
+  const CASE_LINKS = {
+    payouts:"https://example.com/instant-payouts", aibeta:"https://example.com/ai-product",
+    research:"https://example.com/research", payfac:"https://example.com/payfac-migration",
+    kyc:"https://example.com/kyc", finserv:"https://example.com/finserv",
+    bnpl:"https://example.com/bnpl", surcharging:"https://example.com/surcharging",
+    checkout:"https://example.com/checkout"
+  };
+  const modalBg=document.getElementById('modalBg'),pwInput=document.getElementById('pwInput'),errMsg=document.getElementById('errMsg');
+  let pending=null;
+  document.querySelectorAll('.card').forEach(btn=>btn.addEventListener('click',()=>{
+    pending=btn.dataset.case;errMsg.classList.remove('on');pwInput.value='';
+    modalBg.classList.add('on');setTimeout(()=>pwInput.focus(),50);
+  }));
+  function tryUnlock(){
+    if(pwInput.value===PASSWORD){const d=CASE_LINKS[pending];if(d)window.location.href=d;modalBg.classList.remove('on');}
+    else{errMsg.classList.add('on');}
+  }
+  function closeModal(){modalBg.classList.remove('on');}
+  document.getElementById('unlockBtn').addEventListener('click',tryUnlock);
+  document.getElementById('cancelBtn').addEventListener('click',closeModal);
+  pwInput.addEventListener('keydown',e=>{if(e.key==='Enter')tryUnlock();});
+  modalBg.addEventListener('click',e=>{if(e.target===modalBg)closeModal();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+  // pure in-page anchor scrolling (no URL navigation)
+  document.querySelectorAll('.jump').forEach(a=>a.addEventListener('click',e=>{
+    e.preventDefault();
+    const el=document.querySelector(a.getAttribute('href'));
+    if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+  }));
+</script>
+</body>
+</html>
