@@ -1,304 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Johnny Farr — Experience Design Leader</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --paper:#FBFAF6;
-    --ink:#15181E;
-    --ink-soft:#565B65;
-    --accent:#1A3A6B;
-    --accent-deep:#12294D;
-    --accent-soft:#DCE6F4;
-    --line:#E7E5DD;
-    --rule:#DAD8CE;
-    --card-border:rgba(26,58,107,.22);
-    --group-line:rgba(21,24,30,.16);
-    --card:#FFFFFF;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{background:var(--paper);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
-  .rule{height:1px;background:repeating-linear-gradient(90deg,var(--rule) 0 1px,transparent 1px 9px)}
-
-  /* hero */
-  .hero{display:grid;grid-template-columns:1.45fr .9fr;gap:48px;align-items:center;padding:58px 0 50px}
-  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
-  h1{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(46px,6.6vw,74px);line-height:1.04;letter-spacing:-.01em;margin-bottom:22px}
-  .thesis{font-size:clamp(20px,2.3vw,24px);line-height:1.42;color:var(--ink);max-width:32ch;font-weight:400}
-  .thesis .hl{background:linear-gradient(transparent 60%,var(--accent-soft) 60%);padding:0 3px;font-weight:600;white-space:nowrap}
-  .anchor{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);margin-top:20px;letter-spacing:.01em}
-  .cta-row{margin-top:26px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-  .btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-family:"IBM Plex Mono",monospace;font-size:13.5px;font-weight:500;letter-spacing:.01em;padding:14px 26px;border-radius:3px;transition:background .15s}
-  .btn:hover{background:var(--accent-deep)}
-  .hero-li{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--accent);padding-bottom:3px}
-  .hero-li:hover{color:var(--accent)}
-  .jumps{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px;padding-top:22px;border-top:1px solid var(--line)}
-  .jump{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:5px;cursor:pointer}
-  .jump:hover{color:var(--accent)}
-  .jump .ar{color:var(--accent);font-size:13px}
-
-  /* photo */
-  .portrait{aspect-ratio:4/5;width:100%;border-radius:4px;overflow:hidden;background:var(--card);position:relative}
-  .portrait img{width:100%;height:100%;object-fit:cover;display:block}
-
-  /* top strip — 4 consequences */
-  .stats{display:grid;grid-template-columns:repeat(4,1fr)}
-  .stat{padding:30px 22px 32px;border-left:1px solid var(--line)}
-  .stat:first-child{border-left:none;padding-left:4px}
-  .stat .top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-  .trend{width:20px;height:20px;color:var(--accent);flex-shrink:0}
-  .stat .num{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:clamp(28px,3.4vw,40px);line-height:1;letter-spacing:-.02em;color:var(--accent);font-feature-settings:"tnum" 1}
-  .stat .lab{font-size:14px;line-height:1.45;color:var(--ink-soft)}
-
-  /* bands */
-  .band{padding-top:46px}
-  .band h2{font-family:"Playfair Display",serif;font-size:clamp(25px,3vw,32px);font-weight:700;letter-spacing:-.005em;margin-bottom:15px}
-  .band-rule{height:1px;background:var(--group-line);margin-bottom:17px}
-  .band-desc{font-size:15px;color:var(--ink-soft);line-height:1.5;max-width:none;margin-bottom:28px}
-  .band-sep{height:1px;background:repeating-linear-gradient(90deg,var(--rule) 0 1px,transparent 1px 9px);margin-top:46px}
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .card{background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:20px 20px 22px;position:relative;text-align:left;cursor:pointer;font-family:inherit;transition:border-color .15s;display:flex;flex-direction:column}
-  .card:hover{border-color:var(--accent)}
-  .card .lk{width:13px;height:13px;position:absolute;top:18px;right:18px;color:var(--ink-soft);transition:color .15s}
-  .card:hover .lk{color:var(--accent)}
-  .card .eyb{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;letter-spacing:.01em;color:var(--accent);margin-bottom:16px;display:inline-flex;align-items:center;gap:6px;padding-right:18px}
-  .card .eyb .te{width:14px;height:14px;flex-shrink:0}
-  .card .ct{font-family:"Hanken Grotesk",sans-serif;font-size:16.5px;font-weight:600;letter-spacing:-.005em;line-height:1.25;margin-bottom:9px;padding-right:14px}
-  .card .cs{font-size:14px;color:var(--ink-soft);line-height:1.48}
-
-  /* footer */
-  footer{padding:46px 0 64px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-  .foot-links{display:flex;gap:24px}
-  .foot-links a{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink);text-decoration:none}
-  .foot-links a:hover{color:var(--accent)}
-  .foot-note{font-size:13px;color:var(--ink-soft)}
-
-  /* modal */
-  .modal-bg{position:fixed;inset:0;background:rgba(15,18,20,.5);display:none;align-items:center;justify-content:center;padding:24px;z-index:50}
-  .modal-bg.on{display:flex}
-  .modal{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:34px 32px;max-width:380px;width:100%}
-  .modal h3{font-family:"Playfair Display",serif;font-weight:700;font-size:22px;letter-spacing:-.005em;margin-bottom:8px}
-  .modal p{font-size:14.5px;color:var(--ink-soft);margin-bottom:20px}
-  .modal input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:3px;font-size:15px;font-family:"IBM Plex Mono",monospace;margin-bottom:14px;background:var(--paper)}
-  .modal input:focus{outline:none;border-color:var(--accent)}
-  .modal .m-actions{display:flex;gap:10px}
-  .modal .btn{flex:1;text-align:center;cursor:pointer;border:none}
-  .modal .btn-cancel{background:none;color:var(--ink-soft);border:1px solid var(--line)}
-  .modal .btn-cancel:hover{background:none;color:var(--ink)}
-  .err{color:#B0341F;font-size:13px;margin-bottom:12px;display:none}
-  .err.on{display:block}
-
-  @media(max-width:780px){
-    .hero{grid-template-columns:1fr;gap:32px;padding:40px 0}
-    .portrait{max-width:280px}
-    .stats{grid-template-columns:1fr 1fr}
-    .stat{padding:22px 16px}
-    .stat:nth-child(odd){border-left:none;padding-left:4px}
-    .stat:nth-child(n+3){border-top:1px solid var(--line)}
-    .cards{grid-template-columns:1fr}
-  }
-</style>
-</head>
-<body>
-<div class="wrap">
-
-  <header class="hero">
-    <div>
-      <div class="eyebrow">Experience Design Leader · Payments, Fintech &amp; AI</div>
-      <h1>Johnny Farr</h1>
-      <p class="thesis">I lead Experience Design where a design decision is also a <span class="hl">financial one</span>. I get the strategy and team right, so the business outcomes follow.</p>
-      <div class="cta-row">
-        <a class="btn" href="mailto:johnny@johnnyfarr.com">Get in touch →</a>
-        <a class="hero-li" href="https://linkedin.com/in/johnnyfarr" target="_blank" rel="noopener">LinkedIn ↗</a>
-      </div>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Johnny Farr | Product Design Leader</title><meta name="description" content="Product design leadership across fintech, complex B2B2C platforms, and AI. I make complex products simpler, and the teams behind them stronger."></head><body><a class="skip-link" href="#main">Skip to content</a><div id="jf-home-wireframe">
+  <style>
+    #jf-home-wireframe { color-scheme:light; --paper:light-dark(#faf9f6,#1e201f); --ink:light-dark(#262925,#eeeee7); --quiet:light-dark(#646a62,#b5bbb2); --line:light-dark(#d7dbd2,#4c514b); --block:light-dark(#eceee7,#30362f); background:var(--paper);color:var(--ink);font-family:Arial,sans-serif;font-size:15px;line-height:1.55; }
+    #jf-home-wireframe * {box-sizing:border-box}
+    #jf-home-wireframe a {color:inherit;text-underline-offset:5px}
+    #jf-home-wireframe .wrap {padding:0 34px}
+    #jf-home-wireframe nav {display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+    #jf-home-wireframe .navlinks {display:flex;gap:20px;flex-wrap:wrap}
+    #jf-home-wireframe .eyebrow {font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--quiet);font-weight:500}
+    #jf-home-wireframe .hero {padding:65px 0 55px}
+    #jf-home-wireframe h1 {font-family:Georgia,serif;font-size:clamp(30px,5.4vw,49px);line-height:1.14;letter-spacing:-1.5px;max-width:810px;font-weight:400;margin:22px 0}
+    #jf-home-wireframe .intro {max-width:600px;font-size:17px;color:var(--quiet)}
+    #jf-home-wireframe .actions {display:flex;gap:24px;flex-wrap:wrap;margin-top:30px;font-size:14px}
+    #jf-home-wireframe .pillars {display:grid;grid-template-columns:repeat(3,1fr);gap:26px;padding:34px 0 42px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    #jf-home-wireframe h2 {font-size:27px;line-height:1.25;letter-spacing:-.6px;font-weight:400;margin:12px 0}
+    #jf-home-wireframe h3 {font-size:18px;line-height:1.35;font-weight:500;margin:12px 0}
+    #jf-home-wireframe p {margin:10px 0}
+    #jf-home-wireframe .change {font-size:14px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;min-height:32px}
+    #jf-home-wireframe .change .from {color:var(--quiet);position:relative}
+    #jf-home-wireframe .change .to {color:var(--ink)}
+    #jf-home-wireframe .small {font-size:13px;color:var(--quiet)}
+    #jf-home-wireframe .sectionhead {display:flex;justify-content:space-between;gap:20px;align-items:baseline;margin-top:48px}
+    #jf-home-wireframe .project {display:grid;grid-template-columns:1fr 1.1fr;gap:30px;padding:30px 0;border-bottom:1px solid var(--line);align-items:center}
+    #jf-home-wireframe .placeholder {min-height:190px;border:1px dashed var(--line);background:var(--block);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px;gap:7px;color:var(--quiet);font-size:13px}
+    #jf-home-wireframe .placeholder .screen {width:80%;height:70px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:1px}
+    #jf-home-wireframe .tag {display:inline-block;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--quiet)}
+    #jf-home-wireframe .outcome {font-size:14px;margin-top:18px}
+    #jf-home-wireframe .lead {padding:45px 0;border-bottom:1px solid var(--line)}
+    #jf-home-wireframe .lead>p {max-width:630px}
+    #jf-home-wireframe .proof {display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:26px 0}
+    #jf-home-wireframe .proof p {font-size:13px;color:var(--quiet)}
+    #jf-home-wireframe footer {padding:40px 0}
+    #jf-home-wireframe .wirelabel {background:var(--block);padding:10px 34px;font-size:11px;color:var(--quiet);letter-spacing:.8px;text-transform:uppercase;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    #jf-home-wireframe button {font:inherit;color:inherit;background:transparent;border:0;text-decoration:underline;text-underline-offset:3px;padding:0}
+    @media(max-width:550px){#jf-home-wireframe .wrap{padding:0 20px}#jf-home-wireframe .hero{padding:40px 0}#jf-home-wireframe .pillars,#jf-home-wireframe .proof{grid-template-columns:1fr;gap:16px}#jf-home-wireframe .project{grid-template-columns:1fr;gap:18px}#jf-home-wireframe .wirelabel{padding:10px 20px}#jf-home-wireframe .placeholder{min-height:160px}}
+    @media(prefers-reduced-motion:reduce){#jf-home-wireframe .change *{transition:none!important}}
+  
+    html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:#faf9f6}
+    #jf-home-wireframe .wrap{max-width:1192px;margin:auto;padding:0 48px}
+    #jf-home-wireframe nav{padding:28px 0}
+    #jf-home-wireframe nav>span{font-size:13px;letter-spacing:1.4px}
+    #jf-home-wireframe .navlinks a{text-decoration:none;font-size:13px;padding:6px 0}
+    #jf-home-wireframe .hero{padding:80px 0 64px}
+    #jf-home-wireframe h1{font-size:clamp(36px,5.4vw,64px);max-width:960px;margin:25px 0 28px}
+    #jf-home-wireframe .intro{max-width:660px;font-size:17px;line-height:1.65}
+    #jf-home-wireframe .actions a{padding:6px 0}
+    #jf-home-wireframe .project{padding:44px 0;gap:48px;grid-template-columns:1fr 1.1fr}
+    #jf-home-wireframe .project h2{max-width:350px;font-size:32px}
+    #jf-home-wireframe .placeholder{aspect-ratio:1.5;min-height:220px}
+    #jf-home-wireframe .placeholder .screen{height:100px}
+    #jf-home-wireframe .lead{padding:64px 0}
+    #jf-home-wireframe .lead>h2{font-family:Georgia,serif;font-size:38px;max-width:560px}
+    #jf-home-wireframe .leadership-note{max-width:650px}
+    #jf-home-wireframe footer{padding:56px 0 64px}
+    #jf-home-wireframe :focus-visible{outline:2px solid #386340;outline-offset:5px}
+    .skip-link{position:absolute;left:12px;top:-80px;padding:12px;background:#faf9f6;color:#262925;z-index:1}.skip-link:focus{top:12px}
+    @keyframes idea-reveal{from{opacity:.35;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+    #jf-home-wireframe .revealed .change{animation:idea-reveal .65s ease both}
+    #jf-home-wireframe .pillars section:nth-child(2) .change{animation-delay:.1s}
+    #jf-home-wireframe .pillars section:nth-child(3) .change{animation-delay:.2s}
+    @media(max-width:700px){#jf-home-wireframe .wrap{padding:0 24px}#jf-home-wireframe .hero{padding:48px 0}#jf-home-wireframe .pillars,#jf-home-wireframe .proof{grid-template-columns:1fr;gap:24px}#jf-home-wireframe .project{grid-template-columns:1fr;gap:24px}#jf-home-wireframe .placeholder{min-height:180px}#jf-home-wireframe .lead>h2{font-size:32px}#jf-home-wireframe nav{gap:12px}#jf-home-wireframe .navlinks{gap:16px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}#jf-home-wireframe .revealed .change{animation:none}}
+  </style>
+  
+  <div class="wrap">
+    <nav aria-label="Portfolio navigation"><span>JOHNNY FARR</span><div class="navlinks"><a href="#jf-work">Work</a><a href="#jf-lead">How I lead</a><a href="#jf-contact">Contact</a></div></nav>
+    <main id="main"><header class="hero">
+      <div class="eyebrow">Product Design Leader · Fintech, Platforms &amp; AI</div>
+      <h1>I make complex products simpler, and the teams behind them stronger.</h1>
+      <p class="intro">I'm a product design leader specializing in fintech and complex B2B2C platforms.</p><p class="intro">At FreshBooks, I lead design across financial services and AI, shaping product strategy, developing designers, and bringing new products to market.</p>
+      <div class="actions"><a href="#jf-work">Explore my work ↓</a><a href="#jf-lead">How I lead ↓</a><a href="#jf-contact">Get in touch ↗</a></div>
+    </header>
+    <div class="pillars" aria-label="Three leadership strengths">
+      <section><div class="eyebrow">01</div><h3>I shape direction.</h3><div class="change"><span class="from">Strategy</span><span aria-hidden="true">→</span><span class="to">Business impact</span></div><p class="small">Bringing design into product and business decisions.</p></section>
+      <section><div class="eyebrow">02</div><h3>I grow people.</h3><div class="change"><span class="from">Designers</span><span aria-hidden="true">→</span><span class="to">Leaders</span></div><p class="small">Building judgment, ownership, and independence.</p></section>
+      <section><div class="eyebrow">03</div><h3>I elevate the work.</h3><div class="change"><span class="from">Complexity</span><span aria-hidden="true">→</span><span class="to">Clarity</span></div><p class="small">Connecting systems into coherent experiences.</p></section>
     </div>
-    <div class="portrait">
-      <img src="johnny.png" alt="Johnny Farr">
-    </div>
-  </header>
-
-  <!-- ── TOP STRIP: four consequences ─────────────────── -->
-  <div class="rule"></div>
-  <section class="stats" aria-label="Selected outcomes">
-    <div class="stat">
-      <div class="top">
-        <svg class="trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 L9.5 10.5 L13.5 13.5 L21 5.5"/><path d="M15.5 5.5 H21 V11"/></svg>
-        <div class="num">83%</div>
-      </div>
-      <div class="lab">turned a research insight into repeat revenue</div>
-    </div>
-    <div class="stat">
-      <div class="top">
-        <svg class="trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 L9.5 10.5 L13.5 13.5 L21 5.5"/><path d="M15.5 5.5 H21 V11"/></svg>
-        <div class="num">2.5&times;</div>
-      </div>
-      <div class="lab">more customers cleared onboarding, fewer support calls</div>
-    </div>
-    <div class="stat">
-      <div class="top">
-        <svg class="trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 L9.5 10.5 L13.5 13.5 L21 5.5"/><path d="M15.5 5.5 H21 V11"/></svg>
-        <div class="num">130K</div>
-      </div>
-      <div class="lab">moved the business onto its own payment rails</div>
-    </div>
-    <div class="stat">
-      <div class="top">
-        <svg class="trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 L9.5 10.5 L13.5 13.5 L21 5.5"/><path d="M15.5 5.5 H21 V11"/></svg>
-        <div class="num">2&times;</div>
-      </div>
-      <div class="lab">turned a new option into real checkout adoption</div>
-    </div>
-  </section>
-  <div class="rule"></div>
-
-  <!-- ── BAND 1 ───────────────────────────────────────── -->
-  <section class="band" id="design-leadership">
-    <h2>Design Leadership</h2>
-    <div class="band-rule"></div>
-    <p class="band-desc">I own craft and team health to a standard most product leaders are never held to — and ship work that moves the number.</p>
-    <div class="cards">
-      <button class="card" data-case="payouts">
-        <svg class="lk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-        <span class="eyb"><svg class="te" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 L9.5 10.5 L13.5 13.5 L21 5.5"/><path d="M15.5 5.5 H21 V11"/></svg>83% return</span>
-        <span class="ct">Instant payouts, found in research</span>
-        <span class="cs">A customer need we discovered through research; launched it and 83% came back, 40% of payments users tried it.</span>
-      </button>
-      <button class="card" data-case="aibeta">
-        <svg class="lk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-        <span class="eyb">0→1 · in beta</span>
-        <span class="ct">AI product, blank page to beta</span>
-        <span class="cs">Set the strategy and vision, then did the IC design end to end — reframing the way in as an onboarding problem.</span>
-      </button>
-      <button class="card" data-case="research">
-        <svg class="lk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-        <span class="eyb">Embedded, org-wide</span>
-        <span class="ct">Research, ad hoc to continuous</span>
-        <span class="cs">Stood up the continuous research practice the whole org now runs on.</span>
-      </button>
-    </div>
-  </section>
-
-  <div class="band-sep"></div>
-
-  <!-- ── BAND 2 ───────────────────────────────────────── -->
-  <section class="band" id="strategy">
-    <h2>Strategy &amp; Insight</h2>
-    <div class="band-rule"></div>
-    <p class="band-desc">I turn ambiguous signals into the insight and narrative that shape executive direction — upstream of any roadmap.</p>
-    <div class="cards">
-      <button class="card" data-case="payfac">
-        <svg class="lk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-        <span class="eyb"><svg class="te" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 L9.5 10.5 L13.5 13.5 L21 5.5"/><path d="M15.5 5.5 H21 V11"/></svg>130K migrated</span>
-        <span class="ct">PayFac migration at scale</span>
-        <span class="cs">Moved 130K users and billions in volume in under 60 days while becoming a payment facilitator.</span>
-      </button>
-      <button class="card" data-case="kyc">
-        <svg class="lk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-        <span class="eyb"><svg class="te" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 L9.5 10.5 L13.5 13.5 L21 5.5"/><path d="M15.5 5.5 H21 V11"/></svg>2.5× onboarding</span>
-        <span class="ct">Rebuilt KYC onboarding</span>
-        <span class="cs">Deliberately added friction in the right places — support calls dropped and 2.5× more users completed payments onboarding.</span>
-      </button>
-      <button class="card" data-case="finserv">
-        <svg class="lk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-        <span class="eyb">Strategy + vendors</span>
-        <span class="ct">New finserv stream, end to end</span>
-        <span class="cs">Built a new finserv line — lending and bill pay — and aligned external vendors to our roadmap.</span>
-      </button>
-    </div>
-  </section>
-
-  <div class="band-sep"></div>
-
-  <!-- ── BAND 3 ───────────────────────────────────────── -->
-  <section class="band" id="cross-functional">
-    <h2>Cross-functional Influence</h2>
-    <div class="band-rule"></div>
-    <p class="band-desc">Fluent in OKRs, product, and engineering — so decisions get shaped before they ever hit the backlog.</p>
-    <div class="cards">
-      <button class="card" data-case="bnpl">
-        <svg class="lk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-        <span class="eyb"><svg class="te" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 L9.5 10.5 L13.5 13.5 L21 5.5"/><path d="M15.5 5.5 H21 V11"/></svg>2× usage</span>
-        <span class="ct">BNPL across 2 providers</span>
-        <span class="cs">Introduced BNPL, then doubled usage over three phases of experiments across two providers.</span>
-      </button>
-      <button class="card" data-case="surcharging">
-        <svg class="lk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-        <span class="eyb">70%+ demand</span>
-        <span class="ct">Shipped surcharging, net-new</span>
-        <span class="cs">70%+ of customers wanted it; coordinated across engineering to ship.</span>
-      </button>
-      <button class="card" data-case="checkout">
-        <svg class="lk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-        <span class="eyb">In flight</span>
-        <span class="ct">Redefining checkout</span>
-        <span class="cs">Live experiments running now, early results already promising.</span>
-      </button>
-    </div>
-  </section>
-
-  <div class="rule" style="margin-top:46px"></div>
-  <footer>
-    <div class="foot-links">
-      <a href="mailto:hello@johnnyfarr.com">Get in touch</a>
-      <a href="https://linkedin.com/in/johnnyfarr" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="foot-note">Case studies are private — ask me for the password.</div>
-  </footer>
-
-</div>
-
-<!-- password modal -->
-<div class="modal-bg" id="modalBg">
-  <div class="modal">
-    <h3>Private case study</h3>
-    <p>These are client-confidential. Drop the password in and you're in — or just ask me when we talk.</p>
-    <div class="err" id="errMsg">That's not it — try again, or ask me directly.</div>
-    <input type="password" id="pwInput" placeholder="Password" autocomplete="off">
-    <div class="m-actions">
-      <button class="btn btn-cancel" id="cancelBtn">Cancel</button>
-      <button class="btn" id="unlockBtn">Unlock</button>
-    </div>
+    
+    <section id="jf-work" aria-label="Selected work">
+      <div class="sectionhead"><h2>Selected work</h2><span class="small">FreshBooks</span></div>
+      <article class="project"><div><span class="tag">Product judgment & craft</span><h2>A checkout built to grow.</h2><p class="small">An extensible payment pattern, refined through experimentation and built to support new providers.</p><p class="outcome">+41% BNPL transactions · +29% BNPL TPV*</p></div><div class="placeholder"><div class="screen">CHECKOUT DESIGN</div><span>Before / after + reusable payment pattern</span></div></article>
+      <article class="project"><div><span class="tag">Strategy & execution at scale</span><h2>Transforming a payments platform.</h2><p class="small">Navigating migration, merchant onboarding, and compliance across a complex platform transition.</p><p class="outcome">Migration and onboarding outcomes*</p></div><div class="placeholder"><div class="screen">MIGRATION + ONBOARDING</div><span>Customer journey + selected product screens</span></div></article>
+      <article class="project"><div><span class="tag">Product strategy & 0 to 1</span><h2>Connecting financial services.</h2><p class="small">Shaping partner decisions and product foundations across Bill Pay, Lending, and financial onboarding.</p><p class="outcome">Key decisions, launch, and lessons</p></div><div class="placeholder"><div class="screen">FINANCIAL SERVICES</div><span>Product vision + shipped experience</span></div></article>
+      <p class="small">*Outcome wording and measurement periods to verify before publishing.</p>
+    </section>
+    <section class="lead" id="jf-lead"><span class="eyebrow">How I lead · organizational leadership</span><h2>Great work starts with the conditions around it.</h2><p>I believe great design leadership is about creating the conditions for people to do their best work: clear direction, meaningful ownership, and room to develop sound judgment.</p><div class="proof"><div><h3>Grow ownership.</h3><p>Coaching designers to lead decisions and own their product areas.</p></div><div><h3>Build shared practices.</h3><p>Making customer research a consistent part of how teams work.</p></div><div><h3>Stay close to quality.</h3><p>Through critique, key decisions, and hands-on work where it matters.</p></div></div><p class="small leadership-note">My approach combines business thinking, customer insight, and hands-on craft to create experiences that work for people and deliver results for businesses.</p></section>
+    </main><footer id="jf-contact"><span class="eyebrow">About & contact</span><h2>Good products. Strong teams. Let's talk.</h2><p class="small">Based in Toronto. Building financial products and helping the people behind them grow.</p><div class="actions"><a href="mailto:hello@johnnyfarr.com">Email me ↗</a><a href="https://linkedin.com/in/johnnyfarr" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></footer>
   </div>
+  <script>
+    // Reveal the supporting ideas without replacing or striking out either word.
+    if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver(entries => {
+        for (const entry of entries) if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      }, {threshold: 0.15});
+      document.querySelectorAll('.pillars section').forEach(section => observer.observe(section));
+    }
+  </script>
 </div>
-
-<script>
-  const PASSWORD = "letmein";
-  const CASE_LINKS = {
-    payouts:"https://example.com/instant-payouts", aibeta:"https://example.com/ai-product",
-    research:"https://example.com/research", payfac:"https://example.com/payfac-migration",
-    kyc:"https://example.com/kyc", finserv:"https://example.com/finserv",
-    bnpl:"https://example.com/bnpl", surcharging:"https://example.com/surcharging",
-    checkout:"https://example.com/checkout"
-  };
-  const modalBg=document.getElementById('modalBg'),pwInput=document.getElementById('pwInput'),errMsg=document.getElementById('errMsg');
-  let pending=null;
-  document.querySelectorAll('.card').forEach(btn=>btn.addEventListener('click',()=>{
-    pending=btn.dataset.case;errMsg.classList.remove('on');pwInput.value='';
-    modalBg.classList.add('on');setTimeout(()=>pwInput.focus(),50);
-  }));
-  function tryUnlock(){
-    if(pwInput.value===PASSWORD){const d=CASE_LINKS[pending];if(d)window.location.href=d;modalBg.classList.remove('on');}
-    else{errMsg.classList.add('on');}
-  }
-  function closeModal(){modalBg.classList.remove('on');}
-  document.getElementById('unlockBtn').addEventListener('click',tryUnlock);
-  document.getElementById('cancelBtn').addEventListener('click',closeModal);
-  pwInput.addEventListener('keydown',e=>{if(e.key==='Enter')tryUnlock();});
-  modalBg.addEventListener('click',e=>{if(e.target===modalBg)closeModal();});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
-  // pure in-page anchor scrolling (no URL navigation)
-  document.querySelectorAll('.jump').forEach(a=>a.addEventListener('click',e=>{
-    e.preventDefault();
-    const el=document.querySelector(a.getAttribute('href'));
-    if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
-  }));
-</script>
-</body>
-</html>
+</body></html>
