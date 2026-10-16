@@ -48,10 +48,72 @@ button.music{background:transparent;color:var(--ink);text-align:left;cursor:poin
 /* Compact mobile hero; keep the greeting at the established display size. */
 @media(max-width:767px){.hero h1{font-size:clamp(27px,7.15vw,32px);line-height:1.2;letter-spacing:-.65px}.hero h1 .hello{font-size:var(--large);line-height:1.14}}
 .footer-main{grid-template-columns:1fr}
+
+/* Conversation-led hero and footer. */
+.hero{padding:42px 64px 32px}
+.hero-greeting{font-size:var(--body);line-height:1.5;margin:0 0 20px;color:var(--muted)}
+.hero h1.hero-heading{font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(76px,7.8vw,108px);line-height:1.02;letter-spacing:-2.8px;max-width:none;margin:0 0 26px}
+.hero-heading>span{display:block}
+.hero .intro{gap:30px}.hero-support{max-width:540px}.hero .hero-support p{max-width:none;color:var(--ink)}
+.hero .hero-support .hero-current{margin-top:12px;color:var(--muted);font-size:16px}
+.hero .pillars{margin-top:36px;padding-top:24px}
+.footer h2{font-size:clamp(48px,5.6vw,76px);line-height:1.08;letter-spacing:-1.6px;max-width:900px;margin:0 0 20px}
+.footer-support{color:var(--muted);margin:0 0 28px}
+@media(min-width:1051px) and (max-height:800px){.hero{padding-top:32px}.hero h1.hero-heading{font-size:clamp(72px,7vw,96px);margin-bottom:22px}.hero-greeting{margin-bottom:14px}.hero .pillars{margin-top:28px}}
+@media(max-width:1050px){.hero{padding:36px 38px 30px}.hero h1.hero-heading{font-size:clamp(60px,8vw,82px);letter-spacing:-2px}}
+@media(max-width:650px){.hero{padding:28px 24px}.hero-greeting{font-size:17px;margin-bottom:18px}.hero h1.hero-heading{font-size:clamp(36px,10.2vw,52px);line-height:1.08;letter-spacing:-1.2px;margin:0 0 24px}.hero .intro{display:block}.hero-support{max-width:36ch}.hero .hero-support .hero-current{font-size:15px;line-height:1.5;margin-top:12px}.hero .round-link{margin-top:22px}.hero .pillars{margin-top:28px;padding-top:24px}.footer h2{font-size:clamp(38px,10vw,52px);line-height:1.1;letter-spacing:-1px}.footer-support{margin-bottom:26px}}
+
+/* Restore the expressive personal greeting. */
+.hero-greeting{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(40px,5.2vw,72px);font-weight:400;line-height:1.08;letter-spacing:-1.7px;color:#7c687d;margin-bottom:20px}
+@media(min-width:1051px) and (max-height:800px){.hero-greeting{font-size:clamp(44px,4.5vw,62px);margin-bottom:14px}}
+@media(max-width:650px){.hero-greeting{font-size:clamp(32px,8.7vw,42px);line-height:1.12;letter-spacing:-1px;margin-bottom:24px}}
+
+/* Refined Option A: proportion, hierarchy, and restrained editorial detail. */
+.hero{padding-top:38px}
+.hero-greeting{margin-bottom:10px}
+.hero h1.hero-heading{font-size:clamp(58px,6.05vw,84px);line-height:1.07;letter-spacing:-2px;margin-bottom:24px}
+.hero .hero-support{max-width:490px}
+.hero .hero-support p{font-size:15.5px;line-height:1.65;text-wrap:pretty}
+.hero .hero-support .hero-current{font-size:15px;line-height:1.6;margin-top:12px}
+.hero .pillars{gap:32px;margin-top:32px;padding-top:24px}
+.hero .pillar h2{font-size:18px;font-weight:600;margin-bottom:7px;line-height:1.4}
+.hero .pillar p{font-size:16px;line-height:1.6;max-width:27ch;color:var(--muted)}
+.section-head h2,h2.display{font-size:clamp(28px,2.65vw,36px);line-height:1.2;letter-spacing:-.6px}
+.project h3{font-size:clamp(28px,2.5vw,34px);line-height:1.18;letter-spacing:-.5px}
+.footer h2{font-size:clamp(38px,4.65vw,60px);line-height:1.1;letter-spacing:-1.1px}
+
+
+
+
+
+@media(min-width:1051px) and (max-height:800px){.hero{padding-top:30px}.hero-greeting{margin-bottom:8px}.hero h1.hero-heading{font-size:clamp(54px,5.4vw,74px);margin-bottom:22px}.hero .pillars{margin-top:28px}}
+@media(max-width:1050px){.hero h1.hero-heading{font-size:clamp(46px,6.15vw,64px);letter-spacing:-1.5px}.hero-greeting{margin-bottom:10px}}
+@media(max-width:650px){.hero{padding-top:28px}.hero-greeting{margin-bottom:12px}.hero h1.hero-heading{font-size:clamp(26px,7.8vw,40px);line-height:1.1;letter-spacing:-.85px;margin-bottom:22px}.hero .hero-support{max-width:34ch}.hero .hero-support p{font-size:15px;line-height:1.65}.hero .hero-support .hero-current{font-size:14px;margin-top:12px}.hero .pillar h2{font-size:17px;margin-bottom:6px}.hero .pillar p{font-size:15px;max-width:none}.hero .pillars{gap:22px;margin-top:26px}.section-head h2,h2.display,.project h3{font-size:27px;letter-spacing:-.4px}.footer h2{font-size:clamp(34px,9vw,44px)}}
+
+@media(max-width:360px){.hero h1.hero-heading{font-size:24px;letter-spacing:-.8px}.top{gap:12px}.brand{font-size:14px;white-space:nowrap}.brand-photo{width:26px;height:26px}.toplinks a{white-space:nowrap}}
+
+.place-map{display:block;width:100%;height:300px;border:1px solid var(--line);border-radius:8px;background:var(--cream)}
+.place-dialog .place-address{margin-bottom:24px;font-size:16px;line-height:1.6}
+.place-links{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;font-size:14px}
+@media(max-width:650px){.place-map{height:260px}.place-dialog .place-address{font-size:15px}}
+
+.about .personal-note{color:var(--muted)}
+.photo-dialog{width:min(720px,calc(100% - 32px))}
+.photo-dialog figure{margin:0}
+.zoe-photo{display:block;width:100%;height:clamp(230px,46vw,420px);max-height:55dvh;object-fit:cover;object-position:50% 60%;border-radius:8px;filter:saturate(.9) contrast(.98)}
+.photo-dialog figcaption{color:var(--muted);font-size:14px;margin-top:16px}
+.travel-photo-slot{min-height:260px;display:grid;place-items:center;border:1px solid var(--line);border-radius:8px;background:var(--cream);padding:28px;text-align:center}
+.travel-photo-slot p{font-size:16px;margin:0}
+.travel-photo{width:100%;max-height:55dvh;object-fit:cover;display:block;border-radius:8px}
+@media(max-width:650px){.photo-dialog .music-modal-content{padding:24px}.zoe-photo{height:280px;object-position:55% 60%}.travel-photo-slot{min-height:240px}}
+
+#travel-dialog{width:min(580px,calc(100% - 32px))}
+.travel-photo{width:100%;height:min(58dvh,560px);max-height:none;object-fit:cover;object-position:50% 65%;filter:saturate(.92) contrast(.98)}
+@media(max-width:650px){.travel-photo{height:min(56dvh,460px);object-position:54% 60%}}
 </style></head><body id="top"><a class="skip" href="#main">Skip to content</a>
 <div class="wrap"><header class="top"><a class="brand" href="#top" aria-label="Johnny Farr home"><img class="brand-photo" src="johnny-farr.jpeg" width="38" height="38" alt="">Johnny Farr</a><div class="toplinks"><a class="link" href="mailto:johnny@johnnyfarr.com">Say Hello <span class="arrow">↗</span></a><a href="https://www.linkedin.com/in/johnnyfarr" target="_blank" rel="noopener" aria-label="Johnny Farr on LinkedIn">LinkedIn <span class="arrow">↗</span></a></div></header>
 <nav class="nav" aria-label="Main navigation"><a class="active" href="#work">Work</a><a href="#leadership">How I lead</a><a href="#about">About</a></nav>
-<main id="main"><section class="hero" aria-labelledby="intro-heading"><div class="meta eyebrow"><span class="dot"></span>Product design leader · Toronto</div><h1 id="intro-heading"><span class="hello serif">Hey, I'm Johnny Farr.</span>I make complex problems simpler, and the teams behind them stronger.</h1><div class="intro"><p>I lead design across financial services and AI at FreshBooks. Connecting product thinking, customer insight, and the craft of making useful things.</p><a class="round-link" href="#work" aria-label="Explore selected work">↓</a></div><div class="pillars"><div class="pillar"><div class="meta">01</div><h2>Shape Direction</h2><p>Find the right problem. Make the path clearer.</p></div><div class="pillar"><div class="meta">02</div><h2>Grow People</h2><p>Build judgment, confidence, and ownership.</p></div><div class="pillar"><div class="meta">03</div><h2>Elevate the Work</h2><p>Stay close to the details that make a difference.</p></div></div></section>
+<main id="main"><section class="hero" aria-labelledby="intro-heading"><p class="hero-greeting">Hey, I'm Johnny.</p><h1 class="hero-heading" id="intro-heading"><span>Thoughtful products.</span><span>Strong teams.</span></h1><div class="intro"><div class="hero-support"><p>I'm a product design leader who loves untangling messy problems, shaping product direction, and bringing out the best in people.</p><p class="hero-current">Currently doing that at <a href="https://www.freshbooks.com/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:3px" aria-label="FreshBooks (opens in a new tab)">FreshBooks</a>.</p></div><a class="round-link" href="#work" aria-label="Explore selected work">↓</a></div><div class="pillars"><div class="pillar"><div class="meta">01</div><h2>Shape Direction</h2><p>Find the right problem. Make the path clearer.</p></div><div class="pillar"><div class="meta">02</div><h2>Grow People</h2><p>Build judgment, confidence, and ownership.</p></div><div class="pillar"><div class="meta">03</div><h2>Elevate the Work</h2><p>Stay close to the details that make a difference.</p></div></div></section>
 <section class="section" id="work"><div class="section-head"><div><div class="meta">Recent work at FreshBooks</div><h2>A few things I've helped<br>bring to life.</h2></div><p>Making complex products simpler for businesses and the people who run them.</p></div>
 <div class="projects">
 <article class="project"><div class="project-cover" role="img" aria-label="Conceptual wireframe of an AI invoice builder, with a prompt and invoice preview"><div class="wire wire-ai"><div class="wire-bar"><b>FreshBooks</b><span>Invoice builder</span></div><div class="ai-grid"><div class="ai-prompt"><span class="wire-label">LET'S MAKE AN INVOICE</span><div class="wire-title">Start with<br>your own words.</div><div class="prompt-field">Describe the work you've done…<span>↑</span></div><div class="skeleton short"></div><div class="skeleton"></div></div><div class="invoice"><div class="invoice-head"><b>Invoice</b><span>Draft</span></div><div class="skeleton short"></div><div class="skeleton tiny"></div><div class="invoice-table"><div><span>Description</span><span>Amount</span></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton short"></div></div><div class="invoice-total">Total <span>—</span></div><div class="wire-button">Review invoice</div></div></div></div></div><div class="project-body"><h3>AI invoice builder</h3><p>Exploring how AI can make creating an invoice feel less like paperwork and more like a natural part of getting work done.</p></div></article>
@@ -59,14 +121,32 @@ button.music{background:transparent;color:var(--ink);text-align:left;cursor:poin
 <article class="project"><div class="project-cover" role="img" aria-label="Conceptual wireframe bringing Bill Pay and Lending together in a financial services dashboard"><div class="wire wire-finance"><div class="wire-bar"><b>FreshBooks</b><span>Financial services</span></div><div class="finance-content"><div class="wire-title">Your business.<br>A clearer picture.</div><div class="finance-grid"><div class="finance-tile"><span class="wire-label">BILL PAY</span><b>Manage bills</b><div class="skeleton"></div><div class="skeleton short"></div></div><div class="finance-tile"><span class="wire-label">LENDING</span><b>Explore financing</b><div class="skeleton"></div><div class="skeleton short"></div></div></div><div class="finance-bottom">Connected to the way you work <span>→</span></div></div></div></div><div class="project-body"><h3>Embedded financial services</h3><p>Shaping connected experiences across Bill Pay, Lending, and financial onboarding for small businesses.</p></div></article>
 </div><p class="work-note">Illustrative wireframes. Full case studies are being updated — <a class="link" href="mailto:johnny@johnnyfarr.com">get in touch for a deeper look ↗</a></p></section>
 <section class="leadership" id="leadership"><div><div class="meta">How I lead</div><h2 class="display">Helping people grow.<br>Making the work better.</h2><p class="lead">I build the teams, environments, and practices that help good design happen consistently. Clear direction. Honest critique. A close connection to customers.</p></div><div><div class="practice"><h3>Give people room to own the work.</h3><p>I coach designers to make decisions, develop their judgment, and take meaningful ownership.</p></div><div class="practice"><h3>Make learning part of building.</h3><p>I establish research and design practices that bring customer insight into everyday product decisions.</p></div><div class="practice"><h3>Keep the bar high, and stay involved.</h3><p>I connect systems, guide key decisions, and get hands-on when it helps the team move the craft forward.</p></div></div></section>
-<section class="section" id="about"><div class="about"><div class="portrait-wrap"><img class="portrait" src="johnny-farr.jpeg" width="1125" height="1473" alt="Johnny Farr, wearing glasses and a dark sweater" loading="lazy"></div><div><div class="meta">A little about me</div><h2 class="display">Always an itch to <i>build.</i></h2><p>I get an itch to turn a messy problem into something useful. That’s taken me from invoicing with AI to the ways businesses pay and get paid.</p><p>That same builder’s instinct shapes how I lead: giving designers room to make decisions, using critique to sharpen the work, and making customer research part of how the team builds.</p><p>Away from the screen, there's usually <button class="music-inline" type="button" data-open-music aria-haspopup="dialog" aria-controls="music-dialog">music on</button>, a new corner of Toronto to explore, or a walk with Zoe, my very large <s>dog</s> teddy bear.</p></div></div></section></main>
-<footer class="footer" id="contact"><div class="footer-main"><div><div class="meta">Something good starts with a conversation.</div><h2>Thoughtful products.<br>Strong teams.<br>Let’s talk.</h2><div class="footer-links"><a class="link" href="mailto:johnny@johnnyfarr.com">Say Hello <span class="arrow">↗</span></a><a class="link" href="https://www.linkedin.com/in/johnnyfarr" target="_blank" rel="noopener">Connect on LinkedIn <span class="arrow">↗</span></a></div></div></div><div class="bottom"><span>© 2026 Johnny Farr · Toronto, Canada</span><a href="#top">Back to top ↑</a></div></footer></div>
+<section class="section" id="about"><div class="about"><div class="portrait-wrap"><img class="portrait" src="johnny-farr.jpeg" width="1125" height="1473" alt="Johnny Farr, wearing glasses and a dark sweater" loading="lazy"></div><div><div class="meta">A little about me</div><h2 class="display">Always an itch to <em>build.</em></h2><p>I turn messy problems into useful products, from invoicing with AI to the ways businesses pay, get paid, and manage cash flow.</p><p>That same builder’s instinct shapes how I lead: giving designers room to make decisions, sharpening the work through close partnership, and making customer research part of how the product team builds.</p><p class="personal-note">Away from the screen, there's usually <button class="music-inline" type="button" data-open-music aria-haspopup="dialog" aria-controls="music-dialog">music on</button>, a new <button class="music-inline" type="button" data-open-place aria-haspopup="dialog" aria-controls="place-dialog">gem</button> to discover in Toronto, or a walk with <button class="music-inline" type="button" data-open-photo="zoe-dialog" aria-haspopup="dialog" aria-controls="zoe-dialog">Zoe</button>, my very large <s>dog</s> teddy bear. And when I can, <button class="music-inline" type="button" data-open-photo="travel-dialog" aria-haspopup="dialog" aria-controls="travel-dialog">exploring the world</button>.</p></div></div></section></main>
+<footer class="footer" id="contact"><div class="footer-main"><div><h2>Let's do good work together.</h2><p class="footer-support">I'm always up for a good conversation.</p><div class="footer-links"><a class="link" href="mailto:johnny@johnnyfarr.com">Say Hello <span class="arrow">↗</span></a><a class="link" href="https://www.linkedin.com/in/johnnyfarr" target="_blank" rel="noopener">Connect on LinkedIn <span class="arrow">↗</span></a></div></div></div><div class="bottom"><span>© 2026 Johnny Farr · Toronto, Canada</span><a href="#top">Back to top ↑</a></div></footer></div>
 
 <dialog class="music-dialog" id="music-dialog" aria-labelledby="music-title" aria-describedby="music-description">
  <div class="music-modal-content"><div class="music-modal-top"><span class="meta">On repeat</span><button class="music-close" type="button" aria-label="Close music playlist" autofocus>×</button></div>
  <h2 id="music-title">Good company<br>for making things.</h2><p id="music-description">A little of what’s been in my headphones lately.</p>
  <div id="playlist-player"><div class="playlist-empty"><span class="music-disc" aria-hidden="true"></span><p>A playlist is on its way.</p></div></div>
  <a class="playlist-link link" id="playlist-link" target="_blank" rel="noopener noreferrer" hidden>Open in Spotify ↗</a>
+ </div>
+</dialog>
+
+<dialog class="music-dialog place-dialog" id="place-dialog" aria-labelledby="place-title" aria-describedby="place-address">
+ <div class="music-modal-content"><div class="music-modal-top"><span class="meta">Around Toronto</span><button class="music-close" type="button" data-close-place aria-label="Close The Little Jerry details" autofocus>×</button></div>
+ <h2 id="place-title">Good records. Great food.<br>Stay awhile.</h2><p class="place-address" id="place-address"><strong>The Little Jerry</strong><br>418 College Street · Toronto</p>
+ <div class="place-links"><a class="link" href="https://maps.google.com/maps?ll=43.656787,-79.406893&amp;z=15&amp;t=m&amp;hl=en-US&amp;gl=CA&amp;mapclient=embed&amp;cid=1109922250943909120" target="_blank" rel="noopener noreferrer">See it on Google Maps ↗</a><a class="link" href="https://thelittlejerry.com/" target="_blank" rel="noopener noreferrer">Website ↗</a></div>
+ </div>
+</dialog>
+
+<dialog class="music-dialog photo-dialog" id="zoe-dialog" aria-labelledby="zoe-title">
+ <div class="music-modal-content"><div class="music-modal-top"><span class="meta">Off the clock</span><button class="music-close" type="button" data-close-photo aria-label="Close Zoe photo" autofocus>×</button></div>
+ <h2 id="zoe-title">Meet Zoe.</h2><figure><img class="zoe-photo" src="johnny-and-zoe.jpeg" width="1853" height="2406" loading="lazy" alt="Johnny and Zoe, a large golden-brown dog, sharing a striped hammock on a leafy deck."><figcaption>Room for two. Apparently.</figcaption></figure>
+ </div>
+</dialog>
+<dialog class="music-dialog photo-dialog" id="travel-dialog" aria-labelledby="travel-title">
+ <div class="music-modal-content"><div class="music-modal-top"><span class="meta">Further afield</span><button class="music-close" type="button" data-close-photo aria-label="Close exploring the world photo" autofocus>×</button></div>
+ <h2 id="travel-title">Exploring the world.</h2><div id="travel-photo-slot"></div>
  </div>
 </dialog>
 <script>
@@ -106,4 +186,38 @@ musicDialog.addEventListener('close', () => {
  const frame = player.querySelector('iframe'); if (frame) frame.remove();
  musicOpener?.focus({preventScroll:true});
 });
+
+const placeDialog = document.querySelector('#place-dialog');
+let placeOpener = null;
+let placePreviousOverflow = '';
+document.querySelectorAll('[data-open-place]').forEach(button => button.addEventListener('click', () => {
+ placeOpener = button;
+ placePreviousOverflow = document.body.style.overflow;
+ placeDialog.showModal(); document.body.style.overflow = 'hidden';
+}));
+placeDialog.querySelector('[data-close-place]').addEventListener('click', () => placeDialog.close());
+let placeBackdropPress = false;
+placeDialog.addEventListener('pointerdown', event => {placeBackdropPress = event.target === placeDialog;});
+placeDialog.addEventListener('click', event => {if (placeBackdropPress && event.target === placeDialog) placeDialog.close(); placeBackdropPress = false;});
+placeDialog.addEventListener('close', () => {document.body.style.overflow = placePreviousOverflow; placeOpener?.focus({preventScroll:true});});
+
+// Featured travel photograph.
+const EXPLORING_PHOTO_SRC = 'johnny-boating.jpeg';
+if (EXPLORING_PHOTO_SRC) {
+ const travelPhoto = document.createElement('img'); travelPhoto.className = 'travel-photo';
+ travelPhoto.src = EXPLORING_PHOTO_SRC; travelPhoto.alt = 'Johnny wearing a captain’s hat at the helm of a sailboat, with blue water and sky behind him.';
+ const slot = document.querySelector('#travel-photo-slot'); slot.className = ''; slot.replaceChildren(travelPhoto);
+}
+for (const dialogId of ['zoe-dialog', 'travel-dialog']) {
+ const photoDialog = document.getElementById(dialogId);
+ let opener = null; let savedOverflow = ''; let backdropPress = false;
+ document.querySelectorAll('[data-open-photo="' + dialogId + '"]').forEach(button => button.addEventListener('click', () => {
+  opener = button; savedOverflow = document.body.style.overflow;
+  photoDialog.showModal(); document.body.style.overflow = 'hidden';
+ }));
+ photoDialog.querySelector('[data-close-photo]').addEventListener('click', () => photoDialog.close());
+ photoDialog.addEventListener('pointerdown', event => {backdropPress = event.target === photoDialog;});
+ photoDialog.addEventListener('click', event => {if (backdropPress && event.target === photoDialog) photoDialog.close(); backdropPress = false;});
+ photoDialog.addEventListener('close', () => {document.body.style.overflow = savedOverflow; opener?.focus({preventScroll:true});});
+}
 </script></body></html>
