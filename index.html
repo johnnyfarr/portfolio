@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Johnny Farr | Product Design Leader</title><meta name="description" content="Product design leadership across fintech, complex B2B2C platforms, and AI. I make complex products simpler, and the teams behind them stronger."></head><body><a class="skip-link" href="#main">Skip to content</a><div id="jf-home-wireframe">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Johnny Farr | Product Design Leader</title><meta name="description" content="Product design leadership across fintech, complex B2B2C platforms, and AI. I make complex products simpler, and the teams behind them stronger."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"></head><body><a class="skip-link" href="#main">Skip to content</a><div id="jf-home-wireframe">
   <style>
     #jf-home-wireframe { color-scheme:light; --paper:light-dark(#faf9f6,#1e201f); --ink:light-dark(#262925,#eeeee7); --quiet:light-dark(#646a62,#b5bbb2); --line:light-dark(#d7dbd2,#4c514b); --block:light-dark(#eceee7,#30362f); background:var(--paper);color:var(--ink);font-family:Arial,sans-serif;font-size:15px;line-height:1.55; }
     #jf-home-wireframe * {box-sizing:border-box}
@@ -174,6 +174,21 @@
     #jf-home-wireframe .hero .intro{line-height:1.75;margin:0;max-width:650px}
     #jf-home-wireframe .hero .intro + .intro{margin-top:22px}
     #jf-home-wireframe .hero h1{margin-bottom:30px}
+
+    /* Selected typography: Fraunces + Manrope. */
+    #jf-home-wireframe{font-family:"Manrope",Arial,sans-serif;font-weight:400}
+    #jf-home-wireframe h1,#jf-home-wireframe h2,#jf-home-wireframe .project h2,#jf-home-wireframe .sectionhead h2,#jf-home-wireframe .lead>h2,#jf-home-wireframe footer h2{font-family:"Fraunces",Georgia,serif;font-weight:400;font-optical-sizing:auto;letter-spacing:-.015em}
+    #jf-home-wireframe h1{font-size:clamp(36px,5.5vw,60px);line-height:1.16;max-width:none}
+    #jf-home-wireframe .hero-line{display:inline}
+    #jf-home-wireframe .hero .intro{font-size:17px;font-weight:400;line-height:1.75}
+    #jf-home-wireframe nav>span{font-family:"Manrope",Arial,sans-serif;font-weight:700}
+    #jf-home-wireframe .navlinks a,#jf-home-wireframe .pillars h3,#jf-home-wireframe .proof h3{font-weight:500}
+    #jf-home-wireframe .project h2{font-size:35px}
+    #jf-home-wireframe .sectionhead h2{font-size:37px}
+    #jf-home-wireframe .lead>h2,#jf-home-wireframe footer h2{font-size:36px}
+    @media(min-width:1000px){#jf-home-wireframe h1{font-size:clamp(44px,4.65vw,60px)}#jf-home-wireframe .hero-line{display:block;white-space:nowrap}}
+    @media(max-width:450px){#jf-home-wireframe h1{font-size:36px}#jf-home-wireframe .project h2{font-size:31px}#jf-home-wireframe .lead>h2,#jf-home-wireframe footer h2{font-size:32px}}
+
   </style>
   
   <aside class="construction-banner" aria-label="Portfolio status"><span>Portfolio in progress.</span> <a href="mailto:johnny@johnnyfarr.com">Get in touch for the latest ↗</a></aside>
@@ -181,7 +196,7 @@
     <nav aria-label="Portfolio navigation"><span>JOHNNY FARR</span><div class="navlinks"><a href="#jf-work">Work</a><a href="#jf-lead">How I lead</a><a href="#jf-contact">Let’s Talk</a></div></nav>
     <main id="main"><header class="hero">
       <div class="eyebrow">Product Design Leader · Fintech, Platforms &amp; AI</div>
-      <h1>Making complex products simpler, and the teams behind them stronger.</h1>
+      <h1><span class="hero-line">Making complex products simpler,</span> <span class="hero-line">and the teams behind them stronger.</span></h1>
       <p class="intro">At FreshBooks, I lead design across financial services and AI, shaping product strategy, developing designers, and bringing new products to market.</p>
       <p class="intro">My approach combines business thinking, customer insight, and hands-on craft to create experiences that work for people and deliver results for businesses.</p>
       <div class="actions"><a href="#jf-work">Explore my work ↓</a><a href="#jf-lead">How I lead ↓</a><a href="#jf-contact">Get in touch ↗</a></div>
