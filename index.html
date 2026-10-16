@@ -195,6 +195,21 @@
     #jf-home-wireframe h1{font-size:clamp(36px,5.2vw,56px)}
     @media(min-width:1000px){#jf-home-wireframe h1{font-size:clamp(42px,4.35vw,56px)}}
     @media(max-width:450px){#jf-home-wireframe h1{font-size:34px}}
+
+    /* Five type roles: hero, display, supporting heading, body, label. */
+    #jf-home-wireframe{--type-display:36px;--type-heading:20px;--type-body:17px;--type-label:13px;font-size:var(--type-body);line-height:1.7}
+    #jf-home-wireframe h2,#jf-home-wireframe .sectionhead h2,#jf-home-wireframe .project h2,#jf-home-wireframe .lead>h2,#jf-home-wireframe footer h2{font-size:var(--type-display);line-height:1.2}
+    #jf-home-wireframe h3,#jf-home-wireframe .pillars h3,#jf-home-wireframe .proof h3{font-size:var(--type-heading);font-weight:500;line-height:1.4;letter-spacing:-.3px}
+    #jf-home-wireframe .intro,#jf-home-wireframe .hero .intro,#jf-home-wireframe .actions,#jf-home-wireframe .navlinks a,#jf-home-wireframe .change,#jf-home-wireframe .small,#jf-home-wireframe .pillars .small,#jf-home-wireframe .project>div>.small,#jf-home-wireframe .outcome,#jf-home-wireframe .lead>p,#jf-home-wireframe .proof p{font-size:var(--type-body);font-weight:400;line-height:1.7}
+    #jf-home-wireframe .eyebrow,#jf-home-wireframe .pillars .eyebrow,#jf-home-wireframe .tag,#jf-home-wireframe .project .tag,#jf-home-wireframe .construction-banner,#jf-home-wireframe .case-study-note,#jf-home-wireframe .sectionhead>.small,#jf-home-wireframe figcaption,#jf-home-wireframe figcaption span:first-child,#jf-home-wireframe nav>span{font-size:var(--type-label);line-height:1.6}
+    #jf-home-wireframe .eyebrow,#jf-home-wireframe .project .tag{letter-spacing:.7px}
+    #jf-home-wireframe .pillars .small{max-width:none}
+    #jf-home-wireframe .sectionhead>.small{max-width:240px}
+    #jf-home-wireframe .project>div>.small,#jf-home-wireframe .outcome{max-width:370px}
+    #jf-home-wireframe .actions{gap:24px}
+    @media(max-width:800px){#jf-home-wireframe{--type-display:32px}#jf-home-wireframe .sectionhead>.small{max-width:180px}}
+    @media(max-width:450px){#jf-home-wireframe .sectionhead>.small{max-width:none}#jf-home-wireframe .navlinks{gap:16px}#jf-home-wireframe .actions{gap:18px}}
+
   </style>
   
   <aside class="construction-banner" aria-label="Portfolio status"><span>Portfolio in progress.</span> <a href="mailto:johnny@johnnyfarr.com">Get in touch for the latest ↗</a></aside>
