@@ -210,6 +210,11 @@
     @media(max-width:800px){#jf-home-wireframe{--type-display:32px}#jf-home-wireframe .sectionhead>.small{max-width:180px}}
     @media(max-width:450px){#jf-home-wireframe .sectionhead>.small{max-width:none}#jf-home-wireframe .navlinks{gap:16px}#jf-home-wireframe .actions{gap:18px}}
 
+
+    /* One-screen introduction; the leadership band follows in normal flow. */
+    #jf-home-wireframe .pillars h3,#jf-home-wireframe .proof h3{font-weight:600}
+    #jf-home-wireframe .hero{min-height:calc(100vh - var(--opening-chrome,120px));min-height:calc(100svh - var(--opening-chrome,120px));display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding-top:48px;padding-bottom:56px}
+    @media(max-width:800px){#jf-home-wireframe .hero{padding-top:40px;padding-bottom:48px}}
   </style>
   
   <aside class="construction-banner" aria-label="Portfolio status"><span>Portfolio in progress.</span> <a href="mailto:johnny@johnnyfarr.com">Get in touch for the latest ↗</a></aside>
@@ -243,6 +248,26 @@
     </main><footer id="jf-contact"><span class="eyebrow">About & contact</span><h2>Good products. Strong teams.<span class="footer-invitation">Let’s talk.</span></h2><p class="small">Based in Toronto. I’m a product design leader specializing in fintech and complex B2B2C platforms.</p><div class="actions"><a href="mailto:johnny@johnnyfarr.com">Email me ↗</a><a href="https://linkedin.com/in/johnnyfarr" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></footer>
   </div>
   <script>
+
+    // Account for the actual banner/navigation height, including wrapped mobile text.
+    (function(){
+      const root=document.getElementById('jf-home-wireframe');
+      const banner=root.querySelector('.construction-banner');
+      const navigation=root.querySelector('nav');
+      function sizeOpening(){
+        const height=(banner?banner.getBoundingClientRect().height:0)+navigation.getBoundingClientRect().height;
+        root.style.setProperty('--opening-chrome',height+'px');
+      }
+      sizeOpening();
+      if('ResizeObserver' in window){
+        const observer=new ResizeObserver(sizeOpening);
+        observer.observe(navigation);
+        if(banner)observer.observe(banner);
+      }else{
+        window.addEventListener('resize',sizeOpening,{passive:true});
+      }
+    })();
+
     // Reveal the supporting ideas without replacing or striking out either word.
     if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
       const observer = new IntersectionObserver(entries => {
