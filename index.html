@@ -230,7 +230,16 @@ a:focus-visible,button:focus-visible{outline-color:#758132}
  .music-dialog h2 + .modal-subcopy{margin-top:-8px}
 }
 
-@media(max-width:360px){.nav a{padding-left:12px;padding-right:12px;font-size:13px}}
+.nav{transition:margin-left .26s ease}
+.nav .nav-top[hidden]{display:none}
+.nav .nav-top{flex:none;box-sizing:border-box;width:0;padding-left:0;padding-right:0;opacity:0;visibility:hidden;overflow:hidden;white-space:nowrap;pointer-events:none;transition:width .26s ease,padding .26s ease,opacity .18s ease,visibility 0s linear .26s}
+.nav.has-top{margin-left:-31px}
+.nav.has-top .nav-top{width:62px;padding-left:19px;padding-right:19px;opacity:1;visibility:visible;pointer-events:auto;transition:width .26s ease,padding .26s ease,opacity .18s ease .05s,visibility 0s}
+@media(max-width:650px){.nav.has-top{margin-left:-28px}.nav.has-top .nav-top{width:56px;padding-left:16px;padding-right:16px}}
+@media(max-width:420px){.nav.has-top{margin-left:-23px}.nav.has-top .nav-top{width:46px;padding-left:12px;padding-right:12px}}
+@media(max-width:420px){.nav a{padding-left:12px;padding-right:12px;font-size:13px}}
+@media(max-width:360px){.nav a{padding-left:10px;padding-right:10px;font-size:12px}.nav.has-top{margin-left:-21px}.nav.has-top .nav-top{width:42px;padding-left:10px;padding-right:10px}}
+
 </style></head><body id="top"><a class="skip" href="#main">Skip to content</a>
 <div class="wrap"><header class="top"><a class="brand" href="#top" aria-label="Johnny Farr home"><img class="brand-photo" src="johnny-farr.jpeg" width="38" height="38" alt="">Johnny Farr</a><div class="toplinks"><a class="link" href="mailto:johnny@johnnyfarr.com">Say Hello <span class="arrow">↗&#xfe0e;</span></a><a class="link" href="https://www.linkedin.com/in/johnnyfarr" target="_blank" rel="noopener" aria-label="Johnny Farr on LinkedIn">LinkedIn <span class="arrow">↗&#xfe0e;</span></a></div></header>
 <nav class="nav" aria-label="Main navigation"><a href="#top" class="nav-top" hidden>Top</a><a class="active" href="#work">Work</a><a href="#leadership">How I lead</a><a href="#about">About</a></nav>
@@ -275,7 +284,7 @@ a:focus-visible,button:focus-visible{outline-color:#758132}
 <dialog class="music-dialog" id="prototype-dialog" aria-labelledby="prototype-title" aria-describedby="prototype-copy">
  <div class="music-modal-content"><div class="music-modal-top"><span class="meta">On the workbench</span><button class="music-close" type="button" data-close-photo aria-label="Close prototype details" autofocus>×</button></div>
  <h2 id="prototype-title">Not quite ready for its close-up.</h2>
- <p class="modal-subcopy" id="prototype-copy">Something’s taking shape. Coming soon. Can’t wait? I’m happy to give you a sneak peek.</p>
+ <p class="modal-subcopy" id="prototype-copy">I’m using AI agents and new workflows to build a little experiment. It’s early, but I’m happy to share where it’s headed.</p>
  <a class="playlist-link link" href="mailto:johnny@johnnyfarr.com?subject=A%20sneak%20peek">Ask for a sneak peek <span class="arrow">↗&#xfe0e;</span></a>
  </div>
 </dialog>
@@ -315,7 +324,7 @@ a:focus-visible,button:focus-visible{outline-color:#758132}
  </div>
 </dialog>
 <script>
-const topLink=document.querySelector('.nav-top');const links=[...document.querySelectorAll('.nav a:not(.nav-top)')];const sections=links.map(a=>document.querySelector(a.getAttribute('href')));function updateNav(){topLink.hidden=document.querySelector(".hero").getBoundingClientRect().bottom>110;let index=-1;sections.forEach((s,i)=>{if(s.getBoundingClientRect().top<window.innerHeight*.45)index=i});links.forEach((a,i)=>{a.classList.toggle('active',i===index);if(i===index)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')})}addEventListener('scroll',updateNav,{passive:true});updateNav();
+const topLink=document.querySelector('.nav-top');const links=[...document.querySelectorAll('.nav a:not(.nav-top)')];const sections=links.map(a=>document.querySelector(a.getAttribute('href')));const nav=document.querySelector(".nav");topLink.hidden=false;function updateNav(){const showTop=document.querySelector(".hero").getBoundingClientRect().bottom<=110;nav.classList.toggle("has-top",showTop);topLink.tabIndex=showTop?0:-1;topLink.setAttribute("aria-hidden",String(!showTop));let index=-1;sections.forEach((s,i)=>{if(s.getBoundingClientRect().top<window.innerHeight*.45)index=i});links.forEach((a,i)=>{a.classList.toggle('active',i===index);if(i===index)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')})}addEventListener('scroll',updateNav,{passive:true});updateNav();
 
 // Set this to Johnny's chosen public Spotify playlist URL.
 const FEATURED_PLAYLIST_URL = 'https://open.spotify.com/playlist/37i9dQZF1FwSTtoZjwrCas';
