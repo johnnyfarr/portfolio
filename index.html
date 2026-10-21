@@ -202,6 +202,33 @@ a:focus-visible,button:focus-visible{outline-color:#758132}
 .music-dialog .book-cover{flex-shrink:0}
 .music-dialog .playlist-link{align-self:flex-start}
 @media(max-width:650px){.music-dialog .modal-subcopy{font-size:15px}}
+
+/* A shared spacing scale for section transitions and modal content. */
+:root{--section-space:80px}
+#work.section,#about.section{padding-top:var(--section-space)}
+.leadership{margin-top:var(--section-space)}
+.footer{padding-top:var(--section-space)}
+.section-head{margin-bottom:32px}
+.section-head h2{margin-top:12px}
+.leadership .lead{margin-top:24px}
+.practice{padding-top:24px;padding-bottom:24px}
+.practice:first-child{padding-top:0}
+.about p{margin-bottom:24px}
+.about p:last-child{margin-bottom:0}
+.footer h2{margin-bottom:24px}
+.music-dialog .music-modal-content{gap:28px}
+.music-dialog .music-modal-top{position:relative;min-height:24px;padding-right:56px;margin-bottom:-16px}
+.music-dialog .music-close{position:absolute;right:0;top:-8px}
+.music-dialog h2{font-size:30px;line-height:1.2;letter-spacing:-.4px}
+.music-dialog h2 + .modal-subcopy{margin-top:-12px}
+.music-dialog figure figcaption{margin-top:20px}
+@media(max-width:650px){
+ :root{--section-space:56px}
+ .music-dialog h2{font-size:25px}
+ .music-dialog .music-modal-content{gap:24px}
+ .music-dialog .music-modal-top{margin-bottom:-12px}
+ .music-dialog h2 + .modal-subcopy{margin-top:-8px}
+}
 </style></head><body id="top"><a class="skip" href="#main">Skip to content</a>
 <div class="wrap"><header class="top"><a class="brand" href="#top" aria-label="Johnny Farr home"><img class="brand-photo" src="johnny-farr.jpeg" width="38" height="38" alt="">Johnny Farr</a><div class="toplinks"><a class="link" href="mailto:johnny@johnnyfarr.com">Say Hello <span class="arrow">↗&#xfe0e;</span></a><a class="link" href="https://www.linkedin.com/in/johnnyfarr" target="_blank" rel="noopener" aria-label="Johnny Farr on LinkedIn">LinkedIn <span class="arrow">↗&#xfe0e;</span></a></div></header>
 <nav class="nav" aria-label="Main navigation"><a class="active" href="#work">Work</a><a href="#leadership">How I lead</a><a href="#about">About</a></nav>
@@ -241,11 +268,11 @@ a:focus-visible,button:focus-visible{outline-color:#758132}
 <section class="section" id="about"><div class="about"><div class="portrait-wrap"><img class="portrait" src="johnny-farr.jpeg" width="1125" height="1473" alt="Johnny Farr, wearing glasses and a dark sweater" loading="lazy"></div><div><div class="meta">A little about me</div><h2 class="display">A builder at heart.</h2><p>I turn messy problems into useful products, but what really drives me is curiosity. I love figuring out what makes people tick, how teams can work better together, and how to turn an ambitious idea into something real.</p>
 <p>That builder’s instinct follows me outside of work. Lately, I’ve been exploring industrial design, architecture, and 3D printing. There’s usually <button class="music-inline" type="button" data-open-photo="book-dialog" aria-haspopup="dialog" aria-controls="book-dialog">a book on the go</button>, <button class="music-inline" type="button" data-open-music aria-haspopup="dialog" aria-controls="music-dialog">music playing</button> in the background, and some new idea I’m prototyping or building into a little piece of software.</p>
 <p class="personal-note">When I’m not making something, you’ll probably find me discovering a <button class="music-inline" type="button" data-open-place aria-haspopup="dialog" aria-controls="place-dialog">new gem in Toronto</button>, <button class="music-inline" type="button" data-open-photo="travel-dialog" aria-haspopup="dialog" aria-controls="travel-dialog">exploring the world</button>, or hanging out with <button class="music-inline" type="button" data-open-photo="zoe-dialog" aria-haspopup="dialog" aria-controls="zoe-dialog">Zoe</button>, my very large dog.</p></div></div></section></main>
-<footer class="footer" id="contact"><div class="footer-main"><div><h2>Let's do good work together.</h2><p class="footer-support">I'm always up for a good conversation.</p><div class="footer-links"><a class="link" href="mailto:johnny@johnnyfarr.com">Say Hello <span class="arrow">↗&#xfe0e;</span></a><a class="link" href="https://www.linkedin.com/in/johnnyfarr" target="_blank" rel="noopener">Connect on LinkedIn <span class="arrow">↗&#xfe0e;</span></a></div></div></div><div class="bottom"><span>© 2026 Johnny Farr · Toronto, Canada</span><a class="link" href="#top">Back to top <span class="arrow">↑&#xfe0e;</span></a></div></footer></div>
+<footer class="footer" id="contact"><div class="footer-main"><div><h2>Let's do good work together.</h2><div class="footer-links"><a class="link" href="mailto:johnny@johnnyfarr.com">Say Hello <span class="arrow">↗&#xfe0e;</span></a><a class="link" href="https://www.linkedin.com/in/johnnyfarr" target="_blank" rel="noopener">Connect on LinkedIn <span class="arrow">↗&#xfe0e;</span></a></div></div></div><div class="bottom"><span>© 2026 Johnny Farr · Toronto, Canada</span><a class="link" href="#top">Back to top <span class="arrow">↑&#xfe0e;</span></a></div></footer></div>
 
 <dialog class="music-dialog book-dialog" id="book-dialog" aria-labelledby="book-title" aria-describedby="book-copy">
- <div class="music-modal-content"><div class="music-modal-top"><span class="meta">A little light reading</span><button class="music-close" type="button" data-close-photo aria-label="Close current book" autofocus>×</button></div>
- <h2 id="book-title">Quantum fields and the nature of reality</h2><p class="modal-subcopy" id="book-copy">You know, to unwind.</p>
+ <div class="music-modal-content"><div class="music-modal-top"><span class="meta">Currently reading</span><button class="music-close" type="button" data-close-photo aria-label="Close current book" autofocus>×</button></div>
+ <h2 id="book-title">Trying to understand the universe.</h2><p class="modal-subcopy" id="book-copy">Lately, I’ve been learning about quantum fields and how everyday reality comes together. Still wrapping my head around it.</p>
  <figure class="book-cover"><img src="waves-in-an-impossible-sea.jpg" width="413" height="640" alt="Cover of Waves in an Impossible Sea by Matt Strassler" loading="lazy"></figure>
  <a class="playlist-link link" href="https://www.amazon.ca/Waves-Impossible-Sea-Everyday-Emerges/dp/154160329X" target="_blank" rel="noopener noreferrer" aria-label="View Waves in an Impossible Sea on Amazon (opens in a new tab)">View the book <span class="arrow">↗&#xfe0e;</span></a>
  </div>
