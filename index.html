@@ -26,10 +26,10 @@
 <meta name="twitter:description" content="Toronto-based product design leader building thoughtful products and strong teams across fintech, financial services, and AI. Explore my work and approach to design.">
 <meta name="twitter:image" content="https://johnnyfarr.com/og-image.png">
 <meta name="twitter:image:alt" content="Johnny Farr. I build thoughtful products and strong teams.">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
-<link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
+<link rel="icon" href="/favicon.ico?v=2" sizes="any">
+<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
+<link rel="icon" href="/favicon-32x32.png?v=2" type="image/png" sizes="32x32">
+<link rel="icon" href="/favicon-16x16.png?v=2" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
 <script type="application/ld+json">
 {
@@ -126,7 +126,7 @@ button.music{background:transparent;color:var(--ink);text-align:left;cursor:poin
 .hero{padding-top:38px}
 .hero-greeting{margin-bottom:10px}
 .hero h1.hero-heading{font-size:clamp(58px,6.05vw,84px);line-height:1.07;letter-spacing:-2px;margin-bottom:24px}
-.hero .hero-support{max-width:490px}
+.hero .hero-support{width:75%;max-width:none}
 .hero .hero-support p{font-size:15.5px;line-height:1.65;text-wrap:pretty}
 .hero .hero-support .hero-current{font-size:15px;line-height:1.6;margin-top:12px}
 .hero .pillars{gap:32px;margin-top:32px;padding-top:24px}
@@ -142,7 +142,7 @@ button.music{background:transparent;color:var(--ink);text-align:left;cursor:poin
 
 @media(min-width:1051px) and (max-height:800px){.hero{padding-top:30px}.hero-greeting{margin-bottom:8px}.hero h1.hero-heading{font-size:clamp(54px,5.4vw,74px);margin-bottom:22px}.hero .pillars{margin-top:28px}}
 @media(max-width:1050px){.hero h1.hero-heading{font-size:clamp(46px,6.15vw,64px);letter-spacing:-1.5px}.hero-greeting{margin-bottom:10px}}
-@media(max-width:650px){.hero{padding-top:28px}.hero-greeting{margin-bottom:12px}.hero h1.hero-heading{font-size:clamp(26px,7.8vw,40px);line-height:1.1;letter-spacing:-.85px;margin-bottom:22px}.hero .hero-support{max-width:34ch}.hero .hero-support p{font-size:15px;line-height:1.65}.hero .hero-support .hero-current{font-size:14px;margin-top:12px}.hero .pillar h2{font-size:17px;margin-bottom:6px}.hero .pillar p{font-size:15px;max-width:none}.hero .pillars{gap:22px;margin-top:26px}.section-head h2,h2.display,.project h3{font-size:27px;letter-spacing:-.4px}.footer h2{font-size:clamp(34px,9vw,44px)}}
+@media(max-width:650px){.hero{padding-top:28px}.hero-greeting{margin-bottom:12px}.hero h1.hero-heading{font-size:clamp(26px,7.8vw,40px);line-height:1.1;letter-spacing:-.85px;margin-bottom:22px}.hero .hero-support{width:100%;max-width:none}.hero .hero-support p{font-size:15px;line-height:1.65}.hero .hero-support .hero-current{font-size:14px;margin-top:12px}.hero .pillar h2{font-size:17px;margin-bottom:6px}.hero .pillar p{font-size:15px;max-width:none}.hero .pillars{gap:22px;margin-top:26px}.section-head h2,h2.display,.project h3{font-size:27px;letter-spacing:-.4px}.footer h2{font-size:clamp(34px,9vw,44px)}}
 
 @media(max-width:360px){.hero h1.hero-heading{font-size:24px;letter-spacing:-.8px}.top{gap:12px}.brand{font-size:14px;white-space:nowrap}.brand-photo{width:26px;height:26px}.toplinks a{white-space:nowrap}}
 
@@ -189,6 +189,7 @@ a:focus-visible,button:focus-visible{outline-color:#758132}
 /* Tighten only the space between the hero and Recent Work by 30%. */
 #work.section{padding-top:77px}
 @media(max-width:650px){#work.section{padding-top:45.5px}}
+.book-cover{margin:0 0 24px;padding:24px;background:var(--cream);border:1px solid var(--line);border-radius:8px;display:flex;justify-content:center}.book-cover img{display:block;width:180px;max-width:100%;height:auto;box-shadow:5px 8px 18px #30263520}.book-dialog .book-author{font-size:15px;margin-top:-6px;margin-bottom:18px}.book-dialog .book-copy{margin-bottom:0}
 </style></head><body id="top"><a class="skip" href="#main">Skip to content</a>
 <div class="wrap"><header class="top"><a class="brand" href="#top" aria-label="Johnny Farr home"><img class="brand-photo" src="johnny-farr.jpeg" width="38" height="38" alt="">Johnny Farr</a><div class="toplinks"><a class="link" href="mailto:johnny@johnnyfarr.com">Say Hello <span class="arrow">↗&#xfe0e;</span></a><a class="link" href="https://www.linkedin.com/in/johnnyfarr" target="_blank" rel="noopener" aria-label="Johnny Farr on LinkedIn">LinkedIn <span class="arrow">↗&#xfe0e;</span></a></div></header>
 <nav class="nav" aria-label="Main navigation"><a class="active" href="#work">Work</a><a href="#leadership">How I lead</a><a href="#about">About</a></nav>
@@ -218,7 +219,7 @@ a:focus-visible,button:focus-visible{outline-color:#758132}
 .place-photo figcaption a:hover{color:var(--ink)}
 @media(max-width:650px){.place-photo img{height:180px}}
 
-</style><div class="section-head"><div><div class="meta">Recent work at FreshBooks</div><h2>A few things I've helped<br>bring to life.</h2></div><p>From that first invoice to getting paid, I look for the moments that should feel simpler.</p></div>
+</style><div class="section-head"><div><div class="meta">Recent work at FreshBooks</div><h2>A few things I've helped<br>bring to life.</h2></div><p>From the first invoice to money in the bank, I focus on making each step feel more intuitive.</p></div>
 <div class="projects">
 <article class="project"><div class="project-cover" role="img" aria-label="Conceptual wireframe of an AI invoice builder, with a prompt and invoice preview"><div class="wire wire-ai"><div class="wire-bar"><b>FreshBooks</b><span>Invoice builder</span></div><div class="ai-grid"><div class="ai-prompt"><span class="wire-label">LET'S MAKE AN INVOICE</span><div class="wire-title">Start with<br>your own words.</div><div class="prompt-field">Describe the work you've done…<span>↑</span></div><div class="skeleton short"></div><div class="skeleton"></div></div><div class="invoice"><div class="invoice-head"><b>Invoice</b><span>Draft</span></div><div class="skeleton short"></div><div class="skeleton tiny"></div><div class="invoice-table"><div><span>Description</span><span>Amount</span></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton short"></div></div><div class="invoice-total">Total <span>—</span></div><div class="wire-button">Review invoice</div></div></div></div></div><div class="project-body"><div class="meta project-eyebrow">AI &amp; Product Innovation</div><h3>You've done the work. Why type it all again?</h3><p>Creating that first invoice can be a frustrating hurdle. I turned customer research into an AI-powered concept that makes getting started a whole lot easier.</p><p class="project-outcome">Research → Prototype → Controlled experiment</p></div></article>
 <article class="project"><div class="project-cover" role="img" aria-label="Conceptual wireframe of a checkout with payment choices"><div class="wire wire-checkout"><div class="wire-bar"><b>Checkout</b><span>Secure payment</span></div><div class="checkout-content"><div class="wire-label">CHOOSE HOW TO PAY</div><div class="payment-option selected"><span class="radio"></span> Credit or debit card <span class="mini-card"></span></div><div class="payment-option"><span class="radio"></span> Bank transfer</div><div class="payment-option"><span class="radio"></span> Pay over time</div><div class="wire-button">Continue to payment</div></div></div></div><div class="project-body"><div class="meta project-eyebrow">Payments &amp; Checkout</div><h3>Getting paid shouldn't be the hard part.</h3><p>We made payment options easier to discover, improved the checkout experience through experimentation, and built a flexible foundation for new ways to pay.</p><p class="project-outcome">+41% BNPL transactions · +29% BNPL payment volume</p></div></article>
@@ -226,9 +227,16 @@ a:focus-visible,button:focus-visible{outline-color:#758132}
 </div><p class="work-note">Illustrative wireframes. Full case studies are being updated — <a class="link" href="mailto:johnny@johnnyfarr.com">get in touch for a deeper look <span class="arrow">↗&#xfe0e;</span></a></p></section>
 <section class="leadership" id="leadership"><div><div class="meta">How I lead</div><h2 class="display">Helping people grow.<br>Making the work better.</h2><p class="lead">I build the teams, environments, and practices that help good design happen consistently. Clear direction. Honest critique. A close connection to customers.</p></div><div><div class="practice"><h3>Give people room to own the work.</h3><p>I coach designers to make decisions, develop their judgment, and take meaningful ownership.</p></div><div class="practice"><h3>Make learning part of building.</h3><p>I establish research and design practices that bring customer insight into everyday product decisions.</p></div><div class="practice"><h3>Keep the bar high, and stay involved.</h3><p>I connect systems, guide key decisions, and get hands-on when it helps the team move the craft forward.</p></div></div></section>
 <section class="section" id="about"><div class="about"><div class="portrait-wrap"><img class="portrait" src="johnny-farr.jpeg" width="1125" height="1473" alt="Johnny Farr, wearing glasses and a dark sweater" loading="lazy"></div><div><div class="meta">A little about me</div><h2 class="display">A builder at heart.</h2><p>I turn messy problems into useful products, but what really drives me is curiosity. I love figuring out what makes people tick, how teams can work better together, and how to turn an ambitious idea into something real.</p>
-<p>That builder’s instinct follows me outside of work. Lately, I’ve been exploring industrial design, architecture, and 3D printing. There’s usually a book on the go, <button class="music-inline" type="button" data-open-music aria-haspopup="dialog" aria-controls="music-dialog">music playing</button> in the background, and some new idea I’m prototyping or building into a little piece of software.</p>
+<p>That builder’s instinct follows me outside of work. Lately, I’ve been exploring industrial design, architecture, and 3D printing. There’s usually <button class="music-inline" type="button" data-open-photo="book-dialog" aria-haspopup="dialog" aria-controls="book-dialog">a book on the go</button>, <button class="music-inline" type="button" data-open-music aria-haspopup="dialog" aria-controls="music-dialog">music playing</button> in the background, and some new idea I’m prototyping or building into a little piece of software.</p>
 <p class="personal-note">When I’m not making something, you’ll probably find me discovering a <button class="music-inline" type="button" data-open-place aria-haspopup="dialog" aria-controls="place-dialog">new gem in Toronto</button>, <button class="music-inline" type="button" data-open-photo="travel-dialog" aria-haspopup="dialog" aria-controls="travel-dialog">exploring the world</button>, or hanging out with <button class="music-inline" type="button" data-open-photo="zoe-dialog" aria-haspopup="dialog" aria-controls="zoe-dialog">Zoe</button>, my very large dog.</p></div></div></section></main>
 <footer class="footer" id="contact"><div class="footer-main"><div><h2>Let's do good work together.</h2><p class="footer-support">I'm always up for a good conversation.</p><div class="footer-links"><a class="link" href="mailto:johnny@johnnyfarr.com">Say Hello <span class="arrow">↗&#xfe0e;</span></a><a class="link" href="https://www.linkedin.com/in/johnnyfarr" target="_blank" rel="noopener">Connect on LinkedIn <span class="arrow">↗&#xfe0e;</span></a></div></div></div><div class="bottom"><span>© 2026 Johnny Farr · Toronto, Canada</span><a class="link" href="#top">Back to top <span class="arrow">↑&#xfe0e;</span></a></div></footer></div>
+
+<dialog class="music-dialog book-dialog" id="book-dialog" aria-labelledby="book-title" aria-describedby="book-copy">
+ <div class="music-modal-content"><div class="music-modal-top"><span class="meta">Currently reading</span><button class="music-close" type="button" data-close-photo aria-label="Close current book" autofocus>×</button></div>
+ <figure class="book-cover"><img src="waves-in-an-impossible-sea.jpg" width="413" height="640" alt="Cover of Waves in an Impossible Sea by Matt Strassler" loading="lazy"></figure>
+ <h2 id="book-title">Waves in an Impossible Sea</h2><p class="book-author">by Matt Strassler</p><p class="book-copy" id="book-copy">A little light reading on quantum fields and the nature of reality. You know, to unwind.</p>
+ </div>
+</dialog>
 
 <dialog class="music-dialog" id="music-dialog" aria-labelledby="music-title" aria-describedby="music-description">
  <div class="music-modal-content"><div class="music-modal-top"><span class="meta">On repeat</span><button class="music-close" type="button" aria-label="Close music playlist" autofocus>×</button></div>
@@ -314,7 +322,7 @@ if (EXPLORING_PHOTO_SRC) {
  travelPhoto.src = EXPLORING_PHOTO_SRC; travelPhoto.alt = 'Johnny wearing a captain’s hat at the helm of a sailboat, with blue water and sky behind him.';
  const slot = document.querySelector('#travel-photo-slot'); slot.className = ''; slot.replaceChildren(travelPhoto);
 }
-for (const dialogId of ['zoe-dialog', 'travel-dialog']) {
+for (const dialogId of ['zoe-dialog', 'travel-dialog', 'book-dialog']) {
  const photoDialog = document.getElementById(dialogId);
  let opener = null; let savedOverflow = ''; let backdropPress = false;
  document.querySelectorAll('[data-open-photo="' + dialogId + '"]').forEach(button => button.addEventListener('click', () => {
