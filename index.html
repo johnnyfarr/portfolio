@@ -126,7 +126,7 @@ button.music{background:transparent;color:var(--ink);text-align:left;cursor:poin
 .hero{padding-top:38px}
 .hero-greeting{margin-bottom:10px}
 .hero h1.hero-heading{font-size:clamp(58px,6.05vw,84px);line-height:1.07;letter-spacing:-2px;margin-bottom:24px}
-.hero .hero-support{width:75%;max-width:none}
+.hero .hero-support{width:calc((100% - 16px) * 2 / 3);max-width:none}
 .hero .hero-support p{font-size:15.5px;line-height:1.65;text-wrap:pretty}
 .hero .hero-support .hero-current{font-size:15px;line-height:1.6;margin-top:12px}
 .hero .pillars{gap:32px;margin-top:32px;padding-top:24px}
@@ -190,6 +190,17 @@ a:focus-visible,button:focus-visible{outline-color:#758132}
 #work.section{padding-top:77px}
 @media(max-width:650px){#work.section{padding-top:45.5px}}
 .book-cover{margin:0 0 24px;padding:24px;background:var(--cream);border:1px solid var(--line);border-radius:8px;display:flex;justify-content:center}.book-cover img{display:block;width:180px;max-width:100%;height:auto;box-shadow:5px 8px 18px #30263520}.book-dialog .book-author{font-size:15px;margin-top:-6px;margin-bottom:18px}.book-dialog .book-copy{margin-bottom:0}
+
+/* Shared modal rhythm: eyebrow, title, optional subcopy, media, caption/links. */
+.music-dialog .music-modal-content{display:flex;flex-direction:column;gap:24px}
+.music-dialog .music-modal-top,.music-dialog h2,.music-dialog .modal-subcopy,
+.music-dialog .place-photo,.music-dialog .book-cover,.music-dialog figure,
+.music-dialog .place-links,.music-dialog .playlist-link{margin:0}
+.music-dialog h2 + .modal-subcopy{margin-top:-12px}
+.music-dialog .modal-subcopy{font-size:16px;line-height:1.6;color:var(--muted)}
+.music-dialog figure figcaption{font-size:14px;line-height:1.6;margin-top:16px;color:var(--muted)}
+.music-dialog .book-cover{flex-shrink:0}
+@media(max-width:650px){.music-dialog .modal-subcopy{font-size:15px}}
 </style></head><body id="top"><a class="skip" href="#main">Skip to content</a>
 <div class="wrap"><header class="top"><a class="brand" href="#top" aria-label="Johnny Farr home"><img class="brand-photo" src="johnny-farr.jpeg" width="38" height="38" alt="">Johnny Farr</a><div class="toplinks"><a class="link" href="mailto:johnny@johnnyfarr.com">Say Hello <span class="arrow">↗&#xfe0e;</span></a><a class="link" href="https://www.linkedin.com/in/johnnyfarr" target="_blank" rel="noopener" aria-label="Johnny Farr on LinkedIn">LinkedIn <span class="arrow">↗&#xfe0e;</span></a></div></header>
 <nav class="nav" aria-label="Main navigation"><a class="active" href="#work">Work</a><a href="#leadership">How I lead</a><a href="#about">About</a></nav>
@@ -233,14 +244,14 @@ a:focus-visible,button:focus-visible{outline-color:#758132}
 
 <dialog class="music-dialog book-dialog" id="book-dialog" aria-labelledby="book-title" aria-describedby="book-copy">
  <div class="music-modal-content"><div class="music-modal-top"><span class="meta">Currently reading</span><button class="music-close" type="button" data-close-photo aria-label="Close current book" autofocus>×</button></div>
+ <h2 id="book-title">Waves in an Impossible Sea</h2><p class="modal-subcopy" id="book-copy">By Matt Strassler. A little light reading on quantum fields and the nature of reality. You know, to unwind.</p>
  <figure class="book-cover"><img src="waves-in-an-impossible-sea.jpg" width="413" height="640" alt="Cover of Waves in an Impossible Sea by Matt Strassler" loading="lazy"></figure>
- <h2 id="book-title">Waves in an Impossible Sea</h2><p class="book-author">by Matt Strassler</p><p class="book-copy" id="book-copy">A little light reading on quantum fields and the nature of reality. You know, to unwind.</p>
  </div>
 </dialog>
 
 <dialog class="music-dialog" id="music-dialog" aria-labelledby="music-title" aria-describedby="music-description">
  <div class="music-modal-content"><div class="music-modal-top"><span class="meta">On repeat</span><button class="music-close" type="button" aria-label="Close music playlist" autofocus>×</button></div>
- <h2 id="music-title">Always something playing.</h2><p id="music-description">A little of what’s been on the sound system lately.</p>
+ <h2 id="music-title">Always something playing.</h2><p class="modal-subcopy" id="music-description">A little of what’s been on the sound system lately.</p>
  <div id="playlist-player"><div class="playlist-empty"><span class="music-disc" aria-hidden="true"></span><p>A playlist is on its way.</p></div></div>
  <a class="playlist-link link" id="playlist-link" target="_blank" rel="noopener noreferrer" hidden>Open in Spotify <span class="arrow">↗&#xfe0e;</span></a>
  </div>
@@ -248,7 +259,8 @@ a:focus-visible,button:focus-visible{outline-color:#758132}
 
 <dialog class="music-dialog place-dialog" id="place-dialog" aria-labelledby="place-title" aria-describedby="place-address">
  <div class="music-modal-content"><div class="music-modal-top"><span class="meta">Around Toronto</span><button class="music-close" type="button" data-close-place aria-label="Close The Little Jerry details" autofocus>×</button></div>
- <figure class="place-photo"><img src="little-jerry-interior.jpg" width="1600" height="1600" alt="The Little Jerry’s warmly lit wooden bar, with shelves of vinyl records and bottles." loading="lazy"></figure><h2 id="place-title">Good food. Great records. Hard to leave.</h2><p class="place-address" id="place-address"><strong>The Little Jerry</strong><br>418 College Street · Toronto</p>
+ <h2 id="place-title">Good food. Great records. Hard to leave.</h2><p class="place-address modal-subcopy" id="place-address"><strong>The Little Jerry</strong><br>418 College Street · Toronto</p>
+ <figure class="place-photo"><img src="little-jerry-interior.jpg" width="1600" height="1600" alt="The Little Jerry’s warmly lit wooden bar, with shelves of vinyl records and bottles." loading="lazy"></figure>
  <div class="place-links"><a class="link" href="https://maps.google.com/maps?ll=43.656787,-79.406893&amp;z=15&amp;t=m&amp;hl=en-US&amp;gl=CA&amp;mapclient=embed&amp;cid=1109922250943909120" target="_blank" rel="noopener noreferrer">See it on Google Maps <span class="arrow">↗&#xfe0e;</span></a><a class="link" href="https://thelittlejerry.com/" target="_blank" rel="noopener noreferrer">Website <span class="arrow">↗&#xfe0e;</span></a></div>
  </div>
 </dialog>
